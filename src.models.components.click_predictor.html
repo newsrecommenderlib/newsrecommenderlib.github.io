@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Welcome to News Recommenders Library’s documentation! &#8212; News Recommenders Library 0.0.1 documentation</title>
+    <title>src.models.components.click_predictor package &#8212; News Recommenders Library 0.0.1 documentation</title>
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/insipid.css" />
@@ -21,7 +21,6 @@
     <script defer src="_static/insipid-sidebar.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Quick start" href="tutorial.html" />
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
   </head><body>
@@ -62,8 +61,8 @@
             </button>
           </div>
           <div class="title">
-            <span class="parent">News Recommenders Library 0.0.1 documentation</span>
-            <a class="top" href="#">Welcome to News Recommenders Library’s documentation!</a>
+            <a class="parent" href="index.html" accesskey="U">News Recommenders Library 0.0.1 documentation</a>
+            <a class="top" href="#">src.models.components.click_predictor package</a>
           </div>
           <div class="buttons">
             <button id="fullscreen-button" type="button" aria-hidden="true">
@@ -85,23 +84,9 @@
       </div>
     </header>
     <nav>
-      <a href="tutorial.html" class="nav-icon next" title="next:&#13;Quick start" aria-label="Next topic" accesskey="N" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg>
-      </a>
     </nav>
 
     <nav class="relbar">
-      <a class="next" href="tutorial.html" aria-label="Next topic" >
-        <div class="title">
-          <span class="text">
-            <span class="direction">next</span>
-            Quick start
-          </span>
-        </div>
-        <div class="icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
-        </div>
-      </a>
     </nav>  
 
     <div class="document">
@@ -109,70 +94,80 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-<section id="welcome-to-news-recommenders-library-s-documentation">
-<h1>Welcome to News Recommenders Library’s documentation!<a class="headerlink" href="#welcome-to-news-recommenders-library-s-documentation" title="Permalink to this heading">§</a></h1>
-<p>This library is a modular, end-to-end pipeline for news recommender systems.</p>
+<section id="src-models-components-click-predictor-package">
+<h1>src.models.components.click_predictor package<a class="headerlink" href="#src-models-components-click-predictor-package" title="Permalink to this heading">§</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">§</a></h2>
 </section>
-<section id="table-of-contents">
-<h1>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">§</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Quick start</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorial.html#main-technologies">Main Technologies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial.html#running-a-model">Running a model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial.html#using-torchmetrics">Using Torchmetrics</a></li>
+<section id="module-src.models.components.click_predictor.DNN">
+<span id="src-models-components-click-predictor-dnn-module"></span><h2>src.models.components.click_predictor.DNN module<a class="headerlink" href="#module-src.models.components.click_predictor.DNN" title="Permalink to this heading">§</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.components.click_predictor.DNN.DNNClickPredictor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.models.components.click_predictor.DNN.</span></span><span class="sig-name descname"><span class="pre">DNNClickPredictor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hidden_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.click_predictor.DNN.DNNClickPredictor" title="Permalink to this definition">§</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.components.click_predictor.DNN.DNNClickPredictor.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">candidate_news_vector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_vector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.click_predictor.DNN.DNNClickPredictor.forward" title="Permalink to this definition">§</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>candidate_news_vector</strong> – batch_size, X</p></li>
+<li><p><strong>user_vector</strong> – batch_size, X</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="models.html">Models included in the library</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="models.html#baselines-models">Baselines Models</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="models.html#neural-collaborative-filtering">Neural Collaborative Filtering</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models.html#content-based-bert">Content Based (BERT)</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="models.html#advanced-models">Advanced Models</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="models.html#module-src.models.MKR">MKR</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models.html#module-src.models.rippleNet">RippleNet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models.html#module-src.models.DKN">DKN</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models.html#module-src.models.LSTUR">LSTUR</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models.html#module-src.models.naml">NAML</a></li>
-<li class="toctree-l3"><a class="reference internal" href="models.html#module-src.models.nrms">NRMS</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="datamodules.html">Data modules for models included in the library</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="datamodules.html#neural-collaborative-filtering">Neural Collaborative Filtering</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datamodules.html#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering"><code class="docutils literal notranslate"><span class="pre">MINDDataModuleCollaborativeFiltering</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="datamodules.html#content-based-bert">Content Based (BERT)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datamodules.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT"><code class="docutils literal notranslate"><span class="pre">MINDDataModuleBERT</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="datamodules.html#module-src.datamodules.mind.datamodule_MKR">MKR</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datamodules.html#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR"><code class="docutils literal notranslate"><span class="pre">MINDDataModuleMKR</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="datamodules.html#module-src.datamodules.mind.datamodule_RippleNet">RippleNet</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datamodules.html#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet"><code class="docutils literal notranslate"><span class="pre">MINDDataModuleRippleNet</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="datamodules.html#naml-dkn-lstur-nrms">NAML, DKN, LSTUR, NRMS</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datamodules.html#src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML"><code class="docutils literal notranslate"><span class="pre">MINDDataModuleNAML</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>batch_size</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(shape)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.models.components.click_predictor.DNN.DNNClickPredictor.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#src.models.components.click_predictor.DNN.DNNClickPredictor.training" title="Permalink to this definition">§</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
-<section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">§</a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+<section id="module-src.models.components.click_predictor.dot_product">
+<span id="src-models-components-click-predictor-dot-product-module"></span><h2>src.models.components.click_predictor.dot_product module<a class="headerlink" href="#module-src.models.components.click_predictor.dot_product" title="Permalink to this heading">§</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.components.click_predictor.dot_product.DotProductClickPredictor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.models.components.click_predictor.dot_product.</span></span><span class="sig-name descname"><span class="pre">DotProductClickPredictor</span></span><a class="headerlink" href="#src.models.components.click_predictor.dot_product.DotProductClickPredictor" title="Permalink to this definition">§</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.components.click_predictor.dot_product.DotProductClickPredictor.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">candidate_news_vector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_vector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.click_predictor.dot_product.DotProductClickPredictor.forward" title="Permalink to this definition">§</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>candidate_news_vector</strong> – batch_size, candidate_size, X</p></li>
+<li><p><strong>user_vector</strong> – batch_size, X</p></li>
 </ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>batch_size</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(shape)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.models.components.click_predictor.dot_product.DotProductClickPredictor.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#src.models.components.click_predictor.dot_product.DotProductClickPredictor.training" title="Permalink to this definition">§</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.models.components.click_predictor">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-src.models.components.click_predictor" title="Permalink to this heading">§</a></h2>
+</section>
 </section>
 
             <div class="clearer"></div>
@@ -184,7 +179,7 @@
 
           <div class="sidebar-resize-handle"></div>
 
-<h3><a href="#">Table of Contents</a></h3>
+<h3><a href="index.html">Table of Contents</a></h3>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Quick start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="models.html">Models included in the library</a></li>
@@ -203,24 +198,13 @@
     </div>
 
     <nav class="relbar">
-      <a class="next" href="tutorial.html" aria-label="Next topic" >
-        <div class="title">
-          <span class="text">
-            <span class="direction">next</span>
-            Quick start
-          </span>
-        </div>
-        <div class="icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
-        </div>
-      </a>
     </nav>
 
     <footer role="contentinfo">
       &#169; Copyright 2022, Noel Chia, Ahmed Elzamarany, Nadine Maeser.
       Created using <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> 5.2.3.
       <a class="reference external" href="https://insipid-sphinx-theme.readthedocs.io/">Insipid Theme</a>.
-<a class="reference internal" href="_sources/index.rst.txt" rel="nofollow">Show Source</a>.
+<a class="reference internal" href="_sources/src.models.components.click_predictor.rst.txt" rel="nofollow">Show Source</a>.
     </footer>
   </body>
 </html>

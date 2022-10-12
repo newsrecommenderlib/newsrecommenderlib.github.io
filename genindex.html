@@ -1,0 +1,1384 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; News Recommenders Library 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/insipid.css" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script defer src="_static/insipid.js"></script>
+    <script defer src="_static/insipid-sidebar.js"></script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head><body>
+    <script type="text/javascript">
+        document.body.classList.add('js');
+    </script>
+    <input type="checkbox" id="sidebar-checkbox" style="display: none;">
+    <label id="overlay" for="sidebar-checkbox"></label>
+    <div class="sidebar-resize-handle"></div>
+    <script type="text/javascript">
+        try {
+            let sidebar = localStorage.getItem('sphinx-sidebar');
+            const sidebar_width = localStorage.getItem('sphinx-sidebar-width');
+            if (sidebar_width) {
+                document.documentElement.style.setProperty('--sidebar-width', sidebar_width);
+            }
+            // show sidebar on wide screen
+            if (!sidebar && window.matchMedia('(min-width: 100rem)').matches) {
+                sidebar = 'visible';
+                // NB: We don't store the value in localStorage!
+            }
+            if (sidebar === 'visible') {
+                document.getElementById('sidebar-checkbox').checked = true;
+            }
+        } catch(e) {
+            console.info(e);
+        }
+    </script>
+    <header id="topbar-placeholder">
+      <div id="topbar">
+        <div id="titlebar">
+          <div class="buttons">
+            <label for="sidebar-checkbox" id="sidebar-button" role="button" tabindex="0" aria-controls="sphinxsidebar" accesskey="M">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+            </label>
+            <button id="search-button" type="button" title="Search" aria-label="Search" aria-expanded="false" aria-controls="search-form" accesskey="S">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+            </button>
+          </div>
+          <div class="title">
+            <a class="parent" href="index.html" accesskey="U">News Recommenders Library 0.0.1 documentation</a>
+            <a class="top" href="#">Index</a>
+          </div>
+          <div class="buttons">
+            <button id="fullscreen-button" type="button" aria-hidden="true">
+              <span class="enable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z"/></svg>
+              </span>
+              <span class="disable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M4.686 427.314L104 328l-32.922-31.029C55.958 281.851 66.666 256 88.048 256h112C213.303 256 224 266.745 224 280v112c0 21.382-25.803 32.09-40.922 16.971L152 376l-99.314 99.314c-6.248 6.248-16.379 6.248-22.627 0L4.686 449.941c-6.248-6.248-6.248-16.379 0-22.627zM443.314 84.686L344 184l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C234.697 256 224 245.255 224 232V120c0-21.382 25.803-32.09 40.922-16.971L296 136l99.314-99.314c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.248 6.248 6.248 16.379 0 22.627z"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div id="searchbox" role="search">
+          <form id="search-form" class="search" style="display: none" action="search.html" method="get">
+            <input type="search" name="q" placeholder="Search ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <button>Go</button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav>
+    </nav>
+
+    <nav class="relbar">
+    </nav>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#K"><strong>K</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ 
+</div>
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.models.components.attention.html#src.models.components.attention.additive.AdditiveAttention">AdditiveAttention (class in src.models.components.attention.additive)</a>
+
+      <ul>
+        <li><a href="src.models.components.html#src.models.components.utils.AdditiveAttention">(class in src.models.components.utils)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.models.DKN.html#src.models.DKN.attention.Attention">Attention (class in src.models.DKN.attention)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.dataset.BaseDataset">BaseDataset (class in src.datamodules.mind.dataset)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.dataset.BehaviorsBERTDataset">BehaviorsBERTDataset (class in src.datamodules.mind.dataset)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.dataset.BehaviorsDataset">BehaviorsDataset (class in src.datamodules.mind.dataset)</a>
+</li>
+      <li><a href="src.models.MKR.html#src.models.MKR.layers.Bias">Bias (class in src.models.MKR.layers)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="models.html#src.models.collaborativeFiltering.CollaborativeFiltering">CollaborativeFiltering (class in src.models.collaborativeFiltering)</a>, <a href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering">[1]</a>
+</li>
+      <li><a href="src.models.components.html#src.models.components.metrics.LogLoss.compute">compute() (src.models.components.metrics.LogLoss method)</a>
+
+      <ul>
+        <li><a href="src.models.components.html#src.models.components.metrics.MRR.compute">(src.models.components.metrics.MRR method)</a>
+</li>
+        <li><a href="src.models.components.html#src.models.components.metrics.Senti.compute">(src.models.components.metrics.Senti method)</a>
+</li>
+        <li><a href="src.models.components.html#src.models.components.metrics.SentiMRR.compute">(src.models.components.metrics.SentiMRR method)</a>
+</li>
+      </ul></li>
+      <li><a href="models.html#src.models.collaborativeFiltering.CollaborativeFiltering.configure_optimizers">configure_optimizers() (src.models.collaborativeFiltering.CollaborativeFiltering method)</a>, <a href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.configure_optimizers">[1]</a>
+
+      <ul>
+        <li><a href="models.html#src.models.DKN.DKN.configure_optimizers">(src.models.DKN.DKN method)</a>, <a href="src.models.DKN.html#src.models.DKN.DKN.configure_optimizers">[1]</a>
+</li>
+        <li><a href="models.html#src.models.LSTUR.LSTUR.configure_optimizers">(src.models.LSTUR.LSTUR method)</a>, <a href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.configure_optimizers">[1]</a>
+</li>
+        <li><a href="models.html#src.models.MKR.MKR.configure_optimizers">(src.models.MKR.MKR method)</a>, <a href="src.models.MKR.html#src.models.MKR.MKR.configure_optimizers">[1]</a>
+</li>
+        <li><a href="models.html#src.models.naml.NAML.configure_optimizers">(src.models.naml.NAML method)</a>, <a href="src.models.naml.html#src.models.naml.NAML.configure_optimizers">[1]</a>
+</li>
+        <li><a href="models.html#src.models.nrms.NRMS.configure_optimizers">(src.models.nrms.NRMS method)</a>, <a href="src.models.nrms.html#src.models.nrms.NRMS.configure_optimizers">[1]</a>
+</li>
+        <li><a href="models.html#src.models.rippleNet.RippleNet.configure_optimizers">(src.models.rippleNet.RippleNet method)</a>, <a href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.configure_optimizers">[1]</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="models.html#src.models.rippleNet.RippleNet.create_knowledge_graph">create_knowledge_graph() (src.models.rippleNet.RippleNet method)</a>, <a href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.create_knowledge_graph">[1]</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.preprocessing.create_knowledge_graph_file">create_knowledge_graph_file() (in module src.datamodules.mind.preprocessing)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.preprocessing.create_rating_file">create_rating_file() (in module src.datamodules.mind.preprocessing)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.preprocessing.create_rating_file_collaborative">create_rating_file_collaborative() (in module src.datamodules.mind.preprocessing)</a>
+</li>
+      <li><a href="models.html#src.models.rippleNet.RippleNet.create_ripple_set">create_ripple_set() (src.models.rippleNet.RippleNet method)</a>, <a href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.create_ripple_set">[1]</a>
+</li>
+      <li><a href="src.models.MKR.html#src.models.MKR.layers.CrossCompressUnit">CrossCompressUnit (class in src.models.MKR.layers)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.models.MKR.html#src.models.MKR.layers.Dense">Dense (class in src.models.MKR.layers)</a>
+</li>
+      <li><a href="models.html#src.models.DKN.DKN">DKN (class in src.models.DKN)</a>, <a href="src.models.DKN.html#src.models.DKN.DKN">[1]</a>
+</li>
+      <li><a href="src.models.components.click_predictor.html#src.models.components.click_predictor.DNN.DNNClickPredictor">DNNClickPredictor (class in src.models.components.click_predictor.DNN)</a>
+</li>
+      <li><a href="src.models.components.click_predictor.html#src.models.components.click_predictor.dot_product.DotProductClickPredictor">DotProductClickPredictor (class in src.models.components.click_predictor.dot_product)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.download.download_and_extract_glove">download_and_extract_glove() (in module src.datamodules.mind.download)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.download.download_and_extract_mind">download_and_extract_mind() (in module src.datamodules.mind.download)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.download.download_and_extract_wikidata_kg">download_and_extract_wikidata_kg() (in module src.datamodules.mind.download)</a>
+</li>
+      <li><a href="src.datamodules.components.html#src.datamodules.components.utils.download_path">download_path() (in module src.datamodules.components.utils)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.models.naml.html#src.models.naml.news_encoder.ElementEncoder">ElementEncoder (class in src.models.naml.news_encoder)</a>
+</li>
+      <li><a href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.eval_epoch_end">eval_epoch_end() (src.models.collaborativeFiltering.CollaborativeFiltering method)</a>
+
+      <ul>
+        <li><a href="src.models.DKN.html#src.models.DKN.DKN.eval_epoch_end">(src.models.DKN.DKN method)</a>
+</li>
+        <li><a href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.eval_epoch_end">(src.models.LSTUR.LSTUR method)</a>
+</li>
+        <li><a href="src.models.MKR.html#src.models.MKR.MKR.eval_epoch_end">(src.models.MKR.MKR method)</a>
+</li>
+        <li><a href="src.models.naml.html#src.models.naml.NAML.eval_epoch_end">(src.models.naml.NAML method)</a>
+</li>
+        <li><a href="src.models.nrms.html#src.models.nrms.NRMS.eval_epoch_end">(src.models.nrms.NRMS method)</a>
+</li>
+        <li><a href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.eval_epoch_end">(src.models.rippleNet.RippleNet method)</a>
+</li>
+      </ul></li>
+      <li><a href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.eval_step">eval_step() (src.models.collaborativeFiltering.CollaborativeFiltering method)</a>
+
+      <ul>
+        <li><a href="src.models.DKN.html#src.models.DKN.DKN.eval_step">(src.models.DKN.DKN method)</a>
+</li>
+        <li><a href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.eval_step">(src.models.LSTUR.LSTUR method)</a>
+</li>
+        <li><a href="src.models.MKR.html#src.models.MKR.MKR.eval_step">(src.models.MKR.MKR method)</a>
+</li>
+        <li><a href="src.models.naml.html#src.models.naml.NAML.eval_step">(src.models.naml.NAML method)</a>
+</li>
+        <li><a href="src.models.nrms.html#src.models.nrms.NRMS.eval_step">(src.models.nrms.NRMS method)</a>
+</li>
+        <li><a href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.eval_step">(src.models.rippleNet.RippleNet method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.eval_step_end">eval_step_end() (src.models.collaborativeFiltering.CollaborativeFiltering method)</a>
+
+      <ul>
+        <li><a href="src.models.MKR.html#src.models.MKR.MKR.eval_step_end">(src.models.MKR.MKR method)</a>
+</li>
+        <li><a href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.eval_step_end">(src.models.rippleNet.RippleNet method)</a>
+</li>
+      </ul></li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.download.extract_mind">extract_mind() (in module src.datamodules.mind.download)</a>
+</li>
+      <li><a href="src.utils.html#src.utils.extras">extras() (in module src.utils)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.utils.html#src.utils.finish">finish() (in module src.utils)</a>
+</li>
+      <li><a href="models.html#src.models.collaborativeFiltering.CollaborativeFiltering.forward">forward() (src.models.collaborativeFiltering.CollaborativeFiltering method)</a>, <a href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.forward">[1]</a>
+
+      <ul>
+        <li><a href="src.models.components.attention.html#src.models.components.attention.additive.AdditiveAttention.forward">(src.models.components.attention.additive.AdditiveAttention method)</a>
+</li>
+        <li><a href="src.models.components.attention.html#src.models.components.attention.multihead_self.MultiHeadSelfAttention.forward">(src.models.components.attention.multihead_self.MultiHeadSelfAttention method)</a>
+</li>
+        <li><a href="src.models.components.attention.html#src.models.components.attention.multihead_self.ScaledDotProductAttention.forward">(src.models.components.attention.multihead_self.ScaledDotProductAttention method)</a>
+</li>
+        <li><a href="src.models.components.click_predictor.html#src.models.components.click_predictor.DNN.DNNClickPredictor.forward">(src.models.components.click_predictor.DNN.DNNClickPredictor method)</a>
+</li>
+        <li><a href="src.models.components.click_predictor.html#src.models.components.click_predictor.dot_product.DotProductClickPredictor.forward">(src.models.components.click_predictor.dot_product.DotProductClickPredictor method)</a>
+</li>
+        <li><a href="src.models.components.html#src.models.components.simple_dense_net.SimpleDenseNet.forward">(src.models.components.simple_dense_net.SimpleDenseNet method)</a>
+</li>
+        <li><a href="src.models.components.html#src.models.components.utils.AdditiveAttention.forward">(src.models.components.utils.AdditiveAttention method)</a>
+</li>
+        <li><a href="src.models.components.html#src.models.components.utils.TimeDistributed.forward">(src.models.components.utils.TimeDistributed method)</a>
+</li>
+        <li><a href="src.models.DKN.html#src.models.DKN.attention.Attention.forward">(src.models.DKN.attention.Attention method)</a>
+</li>
+        <li><a href="models.html#src.models.DKN.DKN.forward">(src.models.DKN.DKN method)</a>, <a href="src.models.DKN.html#src.models.DKN.DKN.forward">[1]</a>
+</li>
+        <li><a href="src.models.DKN.html#src.models.DKN.KCNN.KCNN.forward">(src.models.DKN.KCNN.KCNN method)</a>
+</li>
+        <li><a href="models.html#src.models.LSTUR.LSTUR.forward">(src.models.LSTUR.LSTUR method)</a>, <a href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.forward">[1]</a>
+</li>
+        <li><a href="src.models.LSTUR.html#src.models.LSTUR.news_encoder.NewsEncoder.forward">(src.models.LSTUR.news_encoder.NewsEncoder method)</a>
+</li>
+        <li><a href="src.models.LSTUR.html#src.models.LSTUR.user_encoder.UserEncoder.forward">(src.models.LSTUR.user_encoder.UserEncoder method)</a>
+</li>
+        <li><a href="src.models.MKR.html#src.models.MKR.layers.Bias.forward">(src.models.MKR.layers.Bias method)</a>
+</li>
+        <li><a href="src.models.MKR.html#src.models.MKR.layers.CrossCompressUnit.forward">(src.models.MKR.layers.CrossCompressUnit method)</a>
+</li>
+        <li><a href="src.models.MKR.html#src.models.MKR.layers.Dense.forward">(src.models.MKR.layers.Dense method)</a>
+</li>
+        <li><a href="models.html#src.models.MKR.MKR.forward">(src.models.MKR.MKR method)</a>, <a href="src.models.MKR.html#src.models.MKR.MKR.forward">[1]</a>
+</li>
+        <li><a href="models.html#src.models.naml.NAML.forward">(src.models.naml.NAML method)</a>, <a href="src.models.naml.html#src.models.naml.NAML.forward">[1]</a>
+</li>
+        <li><a href="src.models.naml.html#src.models.naml.news_encoder.ElementEncoder.forward">(src.models.naml.news_encoder.ElementEncoder method)</a>
+</li>
+        <li><a href="src.models.naml.html#src.models.naml.news_encoder.NewsEncoder.forward">(src.models.naml.news_encoder.NewsEncoder method)</a>
+</li>
+        <li><a href="src.models.naml.html#src.models.naml.news_encoder.TextEncoder.forward">(src.models.naml.news_encoder.TextEncoder method)</a>
+</li>
+        <li><a href="src.models.naml.html#src.models.naml.user_encoder.UserEncoder.forward">(src.models.naml.user_encoder.UserEncoder method)</a>
+</li>
+        <li><a href="src.models.nrms.html#src.models.nrms.news_encoder.NewsEncoder.forward">(src.models.nrms.news_encoder.NewsEncoder method)</a>
+</li>
+        <li><a href="models.html#src.models.nrms.NRMS.forward">(src.models.nrms.NRMS method)</a>, <a href="src.models.nrms.html#src.models.nrms.NRMS.forward">[1]</a>
+</li>
+        <li><a href="src.models.nrms.html#src.models.nrms.user_encoder.UserEncoder.forward">(src.models.nrms.user_encoder.UserEncoder method)</a>
+</li>
+        <li><a href="models.html#src.models.rippleNet.RippleNet.forward">(src.models.rippleNet.RippleNet method)</a>, <a href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.forward">[1]</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.models.components.html#src.models.components.metrics.LogLoss.full_state_update">full_state_update (src.models.components.metrics.LogLoss attribute)</a>
+
+      <ul>
+        <li><a href="src.models.components.html#src.models.components.metrics.MRR.full_state_update">(src.models.components.metrics.MRR attribute)</a>
+</li>
+        <li><a href="src.models.components.html#src.models.components.metrics.Senti.full_state_update">(src.models.components.metrics.Senti attribute)</a>
+</li>
+        <li><a href="src.models.components.html#src.models.components.metrics.SentiMRR.full_state_update">(src.models.components.metrics.SentiMRR attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.download.generate_embeddings">generate_embeddings() (in module src.datamodules.mind.download)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.parse.generate_word_embedding">generate_word_embedding() (in module src.datamodules.mind.parse)</a>
+</li>
+      <li><a href="models.html#src.models.rippleNet.RippleNet.get_feed_dict">get_feed_dict() (src.models.rippleNet.RippleNet method)</a>, <a href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.get_feed_dict">[1]</a>
+</li>
+      <li><a href="src.utils.html#src.utils.get_logger">get_logger() (in module src.utils)</a>
+</li>
+      <li><a href="models.html#src.models.collaborativeFiltering.CollaborativeFiltering.get_n">get_n() (src.models.collaborativeFiltering.CollaborativeFiltering method)</a>, <a href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.get_n">[1]</a>
+</li>
+      <li><a href="models.html#src.models.DKN.DKN.get_news_vector">get_news_vector() (src.models.DKN.DKN method)</a>, <a href="src.models.DKN.html#src.models.DKN.DKN.get_news_vector">[1]</a>
+
+      <ul>
+        <li><a href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.get_news_vector">(src.models.LSTUR.LSTUR method)</a>
+</li>
+        <li><a href="models.html#src.models.naml.NAML.get_news_vector">(src.models.naml.NAML method)</a>, <a href="src.models.naml.html#src.models.naml.NAML.get_news_vector">[1]</a>
+</li>
+        <li><a href="models.html#src.models.nrms.NRMS.get_news_vector">(src.models.nrms.NRMS method)</a>, <a href="src.models.nrms.html#src.models.nrms.NRMS.get_news_vector">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="models.html#src.models.DKN.DKN.get_prediction">get_prediction() (src.models.DKN.DKN method)</a>, <a href="src.models.DKN.html#src.models.DKN.DKN.get_prediction">[1]</a>
+
+      <ul>
+        <li><a href="models.html#src.models.LSTUR.LSTUR.get_prediction">(src.models.LSTUR.LSTUR method)</a>, <a href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.get_prediction">[1]</a>
+</li>
+        <li><a href="models.html#src.models.naml.NAML.get_prediction">(src.models.naml.NAML method)</a>, <a href="src.models.naml.html#src.models.naml.NAML.get_prediction">[1]</a>
+</li>
+        <li><a href="models.html#src.models.nrms.NRMS.get_prediction">(src.models.nrms.NRMS method)</a>, <a href="src.models.nrms.html#src.models.nrms.NRMS.get_prediction">[1]</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.download.get_train_input">get_train_input() (in module src.datamodules.mind.download)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.download.get_user_history">get_user_history() (in module src.datamodules.mind.download)</a>
+</li>
+      <li><a href="models.html#src.models.DKN.DKN.get_user_vector">get_user_vector() (src.models.DKN.DKN method)</a>, <a href="src.models.DKN.html#src.models.DKN.DKN.get_user_vector">[1]</a>
+
+      <ul>
+        <li><a href="models.html#src.models.LSTUR.LSTUR.get_user_vector">(src.models.LSTUR.LSTUR method)</a>, <a href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.get_user_vector">[1]</a>
+</li>
+        <li><a href="models.html#src.models.naml.NAML.get_user_vector">(src.models.naml.NAML method)</a>, <a href="src.models.naml.html#src.models.naml.NAML.get_user_vector">[1]</a>
+</li>
+        <li><a href="models.html#src.models.nrms.NRMS.get_user_vector">(src.models.nrms.NRMS method)</a>, <a href="src.models.nrms.html#src.models.nrms.NRMS.get_user_vector">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.download.get_valid_input">get_valid_input() (in module src.datamodules.mind.download)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.models.DKN.html#src.models.DKN.KCNN.KCNN">KCNN (class in src.models.DKN.KCNN)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.dataset.KGDataset">KGDataset (class in src.datamodules.mind.dataset)</a>
+
+      <ul>
+        <li><a href="src.models.MKR.html#src.models.MKR.kGDataset.KGDataset">(class in src.models.MKR.kGDataset)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.models.MKR.html#src.models.MKR.MKR.l2_loss">l2_loss() (src.models.MKR.MKR method)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.download.load_glove_matrix">load_glove_matrix() (in module src.datamodules.mind.download)</a>
+</li>
+      <li><a href="src.utils.html#src.utils.log_hyperparameters">log_hyperparameters() (in module src.utils)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.models.components.html#src.models.components.metrics.LogLoss">LogLoss (class in src.models.components.metrics)</a>
+</li>
+      <li><a href="src.models.MKR.html#src.models.MKR.MKR.loss_kge">loss_kge() (src.models.MKR.MKR method)</a>
+</li>
+      <li><a href="src.models.MKR.html#src.models.MKR.MKR.loss_rs">loss_rs() (src.models.MKR.MKR method)</a>
+</li>
+      <li><a href="models.html#src.models.LSTUR.LSTUR">LSTUR (class in src.models.LSTUR)</a>, <a href="src.models.LSTUR.html#src.models.LSTUR.LSTUR">[1]</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.datamodules.components.html#src.datamodules.components.utils.maybe_download">maybe_download() (in module src.datamodules.components.utils)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_Base.MINDDataModule">MINDDataModule (class in src.datamodules.mind.datamodule_Base)</a>
+</li>
+      <li><a href="datamodules.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT">MINDDataModuleBERT (class in src.datamodules.mind.datamodule_BERT)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT">[1]</a>
+</li>
+      <li><a href="datamodules.html#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering">MINDDataModuleCollaborativeFiltering (class in src.datamodules.mind.datamodule_CollaborativeFiltering)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering">[1]</a>
+</li>
+      <li><a href="datamodules.html#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR">MINDDataModuleMKR (class in src.datamodules.mind.datamodule_MKR)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR">[1]</a>
+</li>
+      <li><a href="datamodules.html#src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML">MINDDataModuleNAML (class in src.datamodules.mind.datamodule_NAML)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML">[1]</a>
+</li>
+      <li><a href="datamodules.html#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet">MINDDataModuleRippleNet (class in src.datamodules.mind.datamodule_RippleNet)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet">[1]</a>
+</li>
+      <li><a href="models.html#src.models.MKR.MKR">MKR (class in src.models.MKR)</a>, <a href="src.models.MKR.html#src.models.MKR.MKR">[1]</a>
+</li>
+      <li>
+    module
+
+      <ul>
+        <li><a href="src.html#module-src">src</a>
+</li>
+        <li><a href="src.baselines.html#module-src.baselines">src.baselines</a>
+</li>
+        <li><a href="src.datamodules.html#module-src.datamodules">src.datamodules</a>
+</li>
+        <li><a href="src.datamodules.components.html#module-src.datamodules.components">src.datamodules.components</a>
+</li>
+        <li><a href="src.datamodules.components.html#module-src.datamodules.components.utils">src.datamodules.components.utils</a>
+</li>
+        <li><a href="src.datamodules.mind.html#module-src.datamodules.mind">src.datamodules.mind</a>
+</li>
+        <li><a href="src.datamodules.mind.html#module-src.datamodules.mind.datamodule_Base">src.datamodules.mind.datamodule_Base</a>
+</li>
+        <li><a href="src.datamodules.mind.html#module-src.datamodules.mind.datamodule_BERT">src.datamodules.mind.datamodule_BERT</a>
+</li>
+        <li><a href="datamodules.html#module-src.datamodules.mind.datamodule_CollaborativeFiltering">src.datamodules.mind.datamodule_CollaborativeFiltering</a>, <a href="src.datamodules.mind.html#module-src.datamodules.mind.datamodule_CollaborativeFiltering">[1]</a>
+</li>
+        <li><a href="datamodules.html#module-src.datamodules.mind.datamodule_MKR">src.datamodules.mind.datamodule_MKR</a>, <a href="src.datamodules.mind.html#module-src.datamodules.mind.datamodule_MKR">[1]</a>
+</li>
+        <li><a href="datamodules.html#module-src.datamodules.mind.datamodule_NAML">src.datamodules.mind.datamodule_NAML</a>, <a href="src.datamodules.mind.html#module-src.datamodules.mind.datamodule_NAML">[1]</a>
+</li>
+        <li><a href="datamodules.html#module-src.datamodules.mind.datamodule_RippleNet">src.datamodules.mind.datamodule_RippleNet</a>, <a href="src.datamodules.mind.html#module-src.datamodules.mind.datamodule_RippleNet">[1]</a>
+</li>
+        <li><a href="src.datamodules.mind.html#module-src.datamodules.mind.dataset">src.datamodules.mind.dataset</a>
+</li>
+        <li><a href="src.datamodules.mind.html#module-src.datamodules.mind.download">src.datamodules.mind.download</a>
+</li>
+        <li><a href="src.datamodules.mind.html#module-src.datamodules.mind.parse">src.datamodules.mind.parse</a>
+</li>
+        <li><a href="src.datamodules.mind.html#module-src.datamodules.mind.preprocessing">src.datamodules.mind.preprocessing</a>
+</li>
+        <li><a href="src.models.html#module-src.models">src.models</a>
+</li>
+        <li><a href="models.html#module-src.models.collaborativeFiltering">src.models.collaborativeFiltering</a>, <a href="src.models.collaborativeFiltering.html#module-src.models.collaborativeFiltering">[1]</a>
+</li>
+        <li><a href="src.models.components.html#module-src.models.components">src.models.components</a>
+</li>
+        <li><a href="src.models.components.attention.html#module-src.models.components.attention">src.models.components.attention</a>
+</li>
+        <li><a href="src.models.components.attention.html#module-src.models.components.attention.additive">src.models.components.attention.additive</a>
+</li>
+        <li><a href="src.models.components.attention.html#module-src.models.components.attention.multihead_self">src.models.components.attention.multihead_self</a>
+</li>
+        <li><a href="src.models.components.click_predictor.html#module-src.models.components.click_predictor">src.models.components.click_predictor</a>
+</li>
+        <li><a href="src.models.components.click_predictor.html#module-src.models.components.click_predictor.DNN">src.models.components.click_predictor.DNN</a>
+</li>
+        <li><a href="src.models.components.click_predictor.html#module-src.models.components.click_predictor.dot_product">src.models.components.click_predictor.dot_product</a>
+</li>
+        <li><a href="src.models.components.html#module-src.models.components.metrics">src.models.components.metrics</a>
+</li>
+        <li><a href="src.models.components.html#module-src.models.components.simple_dense_net">src.models.components.simple_dense_net</a>
+</li>
+        <li><a href="src.models.components.html#module-src.models.components.utils">src.models.components.utils</a>
+</li>
+        <li><a href="models.html#module-src.models.DKN">src.models.DKN</a>, <a href="src.models.DKN.html#module-src.models.DKN">[1]</a>
+</li>
+        <li><a href="src.models.DKN.html#module-src.models.DKN.attention">src.models.DKN.attention</a>
+</li>
+        <li><a href="src.models.DKN.html#module-src.models.DKN.KCNN">src.models.DKN.KCNN</a>
+</li>
+        <li><a href="models.html#module-src.models.LSTUR">src.models.LSTUR</a>, <a href="src.models.LSTUR.html#module-src.models.LSTUR">[1]</a>
+</li>
+        <li><a href="src.models.LSTUR.html#module-src.models.LSTUR.news_encoder">src.models.LSTUR.news_encoder</a>
+</li>
+        <li><a href="src.models.LSTUR.html#module-src.models.LSTUR.user_encoder">src.models.LSTUR.user_encoder</a>
+</li>
+        <li><a href="models.html#module-src.models.MKR">src.models.MKR</a>, <a href="src.models.MKR.html#module-src.models.MKR">[1]</a>
+</li>
+        <li><a href="src.models.MKR.html#module-src.models.MKR.kGDataset">src.models.MKR.kGDataset</a>
+</li>
+        <li><a href="src.models.MKR.html#module-src.models.MKR.layers">src.models.MKR.layers</a>
+</li>
+        <li><a href="models.html#module-src.models.naml">src.models.naml</a>, <a href="src.models.naml.html#module-src.models.naml">[1]</a>
+</li>
+        <li><a href="src.models.naml.html#module-src.models.naml.news_encoder">src.models.naml.news_encoder</a>
+</li>
+        <li><a href="src.models.naml.html#module-src.models.naml.user_encoder">src.models.naml.user_encoder</a>
+</li>
+        <li><a href="models.html#module-src.models.nrms">src.models.nrms</a>, <a href="src.models.nrms.html#module-src.models.nrms">[1]</a>
+</li>
+        <li><a href="src.models.nrms.html#module-src.models.nrms.news_encoder">src.models.nrms.news_encoder</a>
+</li>
+        <li><a href="src.models.nrms.html#module-src.models.nrms.user_encoder">src.models.nrms.user_encoder</a>
+</li>
+        <li><a href="models.html#module-src.models.rippleNet">src.models.rippleNet</a>, <a href="src.models.rippleNet.html#module-src.models.rippleNet">[1]</a>
+</li>
+        <li><a href="src.html#module-src.testing_pipeline">src.testing_pipeline</a>
+</li>
+        <li><a href="src.html#module-src.training_pipeline">src.training_pipeline</a>
+</li>
+        <li><a href="src.utils.html#module-src.utils">src.utils</a>
+</li>
+        <li><a href="src.vendor.html#module-src.vendor">src.vendor</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.models.components.html#src.models.components.metrics.MRR">MRR (class in src.models.components.metrics)</a>
+</li>
+      <li><a href="src.models.components.attention.html#src.models.components.attention.multihead_self.MultiHeadSelfAttention">MultiHeadSelfAttention (class in src.models.components.attention.multihead_self)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="models.html#src.models.naml.NAML">NAML (class in src.models.naml)</a>, <a href="src.models.naml.html#src.models.naml.NAML">[1]</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.news_dataframe">news_dataframe() (src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT method)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.news_dataloader">news_dataloader() (src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML method)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.dataset.NewsBERTDataset">NewsBERTDataset (class in src.datamodules.mind.dataset)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.dataset.NewsDataset">NewsDataset (class in src.datamodules.mind.dataset)</a>
+</li>
+      <li><a href="src.models.LSTUR.html#src.models.LSTUR.news_encoder.NewsEncoder">NewsEncoder (class in src.models.LSTUR.news_encoder)</a>
+
+      <ul>
+        <li><a href="src.models.naml.html#src.models.naml.news_encoder.NewsEncoder">(class in src.models.naml.news_encoder)</a>
+</li>
+        <li><a href="src.models.nrms.html#src.models.nrms.news_encoder.NewsEncoder">(class in src.models.nrms.news_encoder)</a>
+</li>
+      </ul></li>
+      <li><a href="models.html#src.models.nrms.NRMS">NRMS (class in src.models.nrms)</a>, <a href="src.models.nrms.html#src.models.nrms.NRMS">[1]</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.models.DKN.html#src.models.DKN.DKN.on_eval_start">on_eval_start() (src.models.DKN.DKN method)</a>
+
+      <ul>
+        <li><a href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.on_eval_start">(src.models.LSTUR.LSTUR method)</a>
+</li>
+        <li><a href="src.models.naml.html#src.models.naml.NAML.on_eval_start">(src.models.naml.NAML method)</a>
+</li>
+        <li><a href="src.models.nrms.html#src.models.nrms.NRMS.on_eval_start">(src.models.nrms.NRMS method)</a>
+</li>
+      </ul></li>
+      <li><a href="models.html#src.models.DKN.DKN.on_test_start">on_test_start() (src.models.DKN.DKN method)</a>, <a href="src.models.DKN.html#src.models.DKN.DKN.on_test_start">[1]</a>
+
+      <ul>
+        <li><a href="models.html#src.models.LSTUR.LSTUR.on_test_start">(src.models.LSTUR.LSTUR method)</a>, <a href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.on_test_start">[1]</a>
+</li>
+        <li><a href="models.html#src.models.naml.NAML.on_test_start">(src.models.naml.NAML method)</a>, <a href="src.models.naml.html#src.models.naml.NAML.on_test_start">[1]</a>
+</li>
+        <li><a href="models.html#src.models.nrms.NRMS.on_test_start">(src.models.nrms.NRMS method)</a>, <a href="src.models.nrms.html#src.models.nrms.NRMS.on_test_start">[1]</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="models.html#src.models.DKN.DKN.on_train_start">on_train_start() (src.models.DKN.DKN method)</a>, <a href="src.models.DKN.html#src.models.DKN.DKN.on_train_start">[1]</a>
+
+      <ul>
+        <li><a href="models.html#src.models.LSTUR.LSTUR.on_train_start">(src.models.LSTUR.LSTUR method)</a>, <a href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.on_train_start">[1]</a>
+</li>
+        <li><a href="models.html#src.models.naml.NAML.on_train_start">(src.models.naml.NAML method)</a>, <a href="src.models.naml.html#src.models.naml.NAML.on_train_start">[1]</a>
+</li>
+        <li><a href="models.html#src.models.nrms.NRMS.on_train_start">(src.models.nrms.NRMS method)</a>, <a href="src.models.nrms.html#src.models.nrms.NRMS.on_train_start">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="models.html#src.models.DKN.DKN.on_validation_start">on_validation_start() (src.models.DKN.DKN method)</a>, <a href="src.models.DKN.html#src.models.DKN.DKN.on_validation_start">[1]</a>
+
+      <ul>
+        <li><a href="models.html#src.models.LSTUR.LSTUR.on_validation_start">(src.models.LSTUR.LSTUR method)</a>, <a href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.on_validation_start">[1]</a>
+</li>
+        <li><a href="models.html#src.models.naml.NAML.on_validation_start">(src.models.naml.NAML method)</a>, <a href="src.models.naml.html#src.models.naml.NAML.on_validation_start">[1]</a>
+</li>
+        <li><a href="models.html#src.models.nrms.NRMS.on_validation_start">(src.models.nrms.NRMS method)</a>, <a href="src.models.nrms.html#src.models.nrms.NRMS.on_validation_start">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="models.html#src.models.MKR.MKR.optimizer_step">optimizer_step() (src.models.MKR.MKR method)</a>, <a href="src.models.MKR.html#src.models.MKR.MKR.optimizer_step">[1]</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.parse.parse_behaviors">parse_behaviors() (in module src.datamodules.mind.parse)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.parse.parse_behaviors_bert">parse_behaviors_bert() (in module src.datamodules.mind.parse)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.parse.parse_mind">parse_mind() (in module src.datamodules.mind.parse)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.parse.parse_mind_bert">parse_mind_bert() (in module src.datamodules.mind.parse)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.parse.parse_news">parse_news() (in module src.datamodules.mind.parse)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.parse.parse_news_bert">parse_news_bert() (in module src.datamodules.mind.parse)</a>
+</li>
+      <li><a href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.predict">predict() (src.models.rippleNet.RippleNet method)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_Base.MINDDataModule.prepare">prepare() (src.datamodules.mind.datamodule_Base.MINDDataModule method)</a>
+
+      <ul>
+        <li><a href="datamodules.html#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.prepare">(src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering method)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.prepare">[1]</a>
+</li>
+        <li><a href="datamodules.html#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.prepare">(src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR method)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.prepare">[1]</a>
+</li>
+        <li><a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.prepare">(src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML method)</a>
+</li>
+        <li><a href="datamodules.html#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.prepare">(src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet method)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.prepare">[1]</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="datamodules.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.prepare_data">prepare_data() (src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT method)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.prepare_data">[1]</a>
+
+      <ul>
+        <li><a href="datamodules.html#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.prepare_data">(src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering method)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.prepare_data">[1]</a>
+</li>
+        <li><a href="datamodules.html#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.prepare_data">(src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR method)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.prepare_data">[1]</a>
+</li>
+        <li><a href="datamodules.html#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.prepare_data">(src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet method)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.prepare_data">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.preprocessing.prepare_numpy_data">prepare_numpy_data() (in module src.datamodules.mind.preprocessing)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.preprocessing.prepare_numpy_kg">prepare_numpy_kg() (in module src.datamodules.mind.preprocessing)</a>
+</li>
+      <li><a href="models.html#src.models.rippleNet.RippleNet.prepare_rating_data_train">prepare_rating_data_train() (src.models.rippleNet.RippleNet method)</a>, <a href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.prepare_rating_data_train">[1]</a>
+</li>
+      <li><a href="src.utils.html#src.utils.print_config">print_config() (in module src.utils)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.dataset.RatingsDataset">RatingsDataset (class in src.datamodules.mind.dataset)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.download.read_clickhistory">read_clickhistory() (in module src.datamodules.mind.download)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.download.read_news">read_news() (in module src.datamodules.mind.download)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.download.read_news_ids">read_news_ids() (in module src.datamodules.mind.download)</a>
+</li>
+      <li><a href="models.html#src.models.rippleNet.RippleNet">RippleNet (class in src.models.rippleNet)</a>, <a href="src.models.rippleNet.html#src.models.rippleNet.RippleNet">[1]</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.models.components.attention.html#src.models.components.attention.multihead_self.ScaledDotProductAttention">ScaledDotProductAttention (class in src.models.components.attention.multihead_self)</a>
+</li>
+      <li><a href="src.models.components.html#src.models.components.metrics.Senti">Senti (class in src.models.components.metrics)</a>
+</li>
+      <li><a href="src.models.components.html#src.models.components.metrics.SentiMRR">SentiMRR (class in src.models.components.metrics)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_Base.MINDDataModule.setup">setup() (src.datamodules.mind.datamodule_Base.MINDDataModule method)</a>
+
+      <ul>
+        <li><a href="datamodules.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.setup">(src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT method)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.setup">[1]</a>
+</li>
+        <li><a href="datamodules.html#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.setup">(src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering method)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.setup">[1]</a>
+</li>
+        <li><a href="datamodules.html#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.setup">(src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR method)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.setup">[1]</a>
+</li>
+        <li><a href="datamodules.html#src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.setup">(src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML method)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.setup">[1]</a>
+</li>
+        <li><a href="datamodules.html#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.setup">(src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet method)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.setup">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="src.models.components.html#src.models.components.simple_dense_net.SimpleDenseNet">SimpleDenseNet (class in src.models.components.simple_dense_net)</a>
+</li>
+      <li>
+    src
+
+      <ul>
+        <li><a href="src.html#module-src">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.baselines
+
+      <ul>
+        <li><a href="src.baselines.html#module-src.baselines">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.datamodules
+
+      <ul>
+        <li><a href="src.datamodules.html#module-src.datamodules">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.datamodules.components
+
+      <ul>
+        <li><a href="src.datamodules.components.html#module-src.datamodules.components">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.datamodules.components.utils
+
+      <ul>
+        <li><a href="src.datamodules.components.html#module-src.datamodules.components.utils">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.datamodules.mind
+
+      <ul>
+        <li><a href="src.datamodules.mind.html#module-src.datamodules.mind">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.datamodules.mind.datamodule_Base
+
+      <ul>
+        <li><a href="src.datamodules.mind.html#module-src.datamodules.mind.datamodule_Base">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.datamodules.mind.datamodule_BERT
+
+      <ul>
+        <li><a href="src.datamodules.mind.html#module-src.datamodules.mind.datamodule_BERT">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.datamodules.mind.datamodule_CollaborativeFiltering
+
+      <ul>
+        <li><a href="datamodules.html#module-src.datamodules.mind.datamodule_CollaborativeFiltering">module</a>, <a href="src.datamodules.mind.html#module-src.datamodules.mind.datamodule_CollaborativeFiltering">[1]</a>
+</li>
+      </ul></li>
+      <li>
+    src.datamodules.mind.datamodule_MKR
+
+      <ul>
+        <li><a href="datamodules.html#module-src.datamodules.mind.datamodule_MKR">module</a>, <a href="src.datamodules.mind.html#module-src.datamodules.mind.datamodule_MKR">[1]</a>
+</li>
+      </ul></li>
+      <li>
+    src.datamodules.mind.datamodule_NAML
+
+      <ul>
+        <li><a href="datamodules.html#module-src.datamodules.mind.datamodule_NAML">module</a>, <a href="src.datamodules.mind.html#module-src.datamodules.mind.datamodule_NAML">[1]</a>
+</li>
+      </ul></li>
+      <li>
+    src.datamodules.mind.datamodule_RippleNet
+
+      <ul>
+        <li><a href="datamodules.html#module-src.datamodules.mind.datamodule_RippleNet">module</a>, <a href="src.datamodules.mind.html#module-src.datamodules.mind.datamodule_RippleNet">[1]</a>
+</li>
+      </ul></li>
+      <li>
+    src.datamodules.mind.dataset
+
+      <ul>
+        <li><a href="src.datamodules.mind.html#module-src.datamodules.mind.dataset">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.datamodules.mind.download
+
+      <ul>
+        <li><a href="src.datamodules.mind.html#module-src.datamodules.mind.download">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.datamodules.mind.parse
+
+      <ul>
+        <li><a href="src.datamodules.mind.html#module-src.datamodules.mind.parse">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.datamodules.mind.preprocessing
+
+      <ul>
+        <li><a href="src.datamodules.mind.html#module-src.datamodules.mind.preprocessing">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models
+
+      <ul>
+        <li><a href="src.models.html#module-src.models">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.collaborativeFiltering
+
+      <ul>
+        <li><a href="models.html#module-src.models.collaborativeFiltering">module</a>, <a href="src.models.collaborativeFiltering.html#module-src.models.collaborativeFiltering">[1]</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.components
+
+      <ul>
+        <li><a href="src.models.components.html#module-src.models.components">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.components.attention
+
+      <ul>
+        <li><a href="src.models.components.attention.html#module-src.models.components.attention">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.components.attention.additive
+
+      <ul>
+        <li><a href="src.models.components.attention.html#module-src.models.components.attention.additive">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.components.attention.multihead_self
+
+      <ul>
+        <li><a href="src.models.components.attention.html#module-src.models.components.attention.multihead_self">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    src.models.components.click_predictor
+
+      <ul>
+        <li><a href="src.models.components.click_predictor.html#module-src.models.components.click_predictor">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.components.click_predictor.DNN
+
+      <ul>
+        <li><a href="src.models.components.click_predictor.html#module-src.models.components.click_predictor.DNN">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.components.click_predictor.dot_product
+
+      <ul>
+        <li><a href="src.models.components.click_predictor.html#module-src.models.components.click_predictor.dot_product">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.components.metrics
+
+      <ul>
+        <li><a href="src.models.components.html#module-src.models.components.metrics">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.components.simple_dense_net
+
+      <ul>
+        <li><a href="src.models.components.html#module-src.models.components.simple_dense_net">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.components.utils
+
+      <ul>
+        <li><a href="src.models.components.html#module-src.models.components.utils">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.DKN
+
+      <ul>
+        <li><a href="models.html#module-src.models.DKN">module</a>, <a href="src.models.DKN.html#module-src.models.DKN">[1]</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.DKN.attention
+
+      <ul>
+        <li><a href="src.models.DKN.html#module-src.models.DKN.attention">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.DKN.KCNN
+
+      <ul>
+        <li><a href="src.models.DKN.html#module-src.models.DKN.KCNN">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.LSTUR
+
+      <ul>
+        <li><a href="models.html#module-src.models.LSTUR">module</a>, <a href="src.models.LSTUR.html#module-src.models.LSTUR">[1]</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.LSTUR.news_encoder
+
+      <ul>
+        <li><a href="src.models.LSTUR.html#module-src.models.LSTUR.news_encoder">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.LSTUR.user_encoder
+
+      <ul>
+        <li><a href="src.models.LSTUR.html#module-src.models.LSTUR.user_encoder">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.MKR
+
+      <ul>
+        <li><a href="models.html#module-src.models.MKR">module</a>, <a href="src.models.MKR.html#module-src.models.MKR">[1]</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.MKR.kGDataset
+
+      <ul>
+        <li><a href="src.models.MKR.html#module-src.models.MKR.kGDataset">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.MKR.layers
+
+      <ul>
+        <li><a href="src.models.MKR.html#module-src.models.MKR.layers">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.naml
+
+      <ul>
+        <li><a href="models.html#module-src.models.naml">module</a>, <a href="src.models.naml.html#module-src.models.naml">[1]</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.naml.news_encoder
+
+      <ul>
+        <li><a href="src.models.naml.html#module-src.models.naml.news_encoder">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.naml.user_encoder
+
+      <ul>
+        <li><a href="src.models.naml.html#module-src.models.naml.user_encoder">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.nrms
+
+      <ul>
+        <li><a href="models.html#module-src.models.nrms">module</a>, <a href="src.models.nrms.html#module-src.models.nrms">[1]</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.nrms.news_encoder
+
+      <ul>
+        <li><a href="src.models.nrms.html#module-src.models.nrms.news_encoder">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.nrms.user_encoder
+
+      <ul>
+        <li><a href="src.models.nrms.html#module-src.models.nrms.user_encoder">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.models.rippleNet
+
+      <ul>
+        <li><a href="models.html#module-src.models.rippleNet">module</a>, <a href="src.models.rippleNet.html#module-src.models.rippleNet">[1]</a>
+</li>
+      </ul></li>
+      <li>
+    src.testing_pipeline
+
+      <ul>
+        <li><a href="src.html#module-src.testing_pipeline">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.training_pipeline
+
+      <ul>
+        <li><a href="src.html#module-src.training_pipeline">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.utils
+
+      <ul>
+        <li><a href="src.utils.html#module-src.utils">module</a>
+</li>
+      </ul></li>
+      <li>
+    src.vendor
+
+      <ul>
+        <li><a href="src.vendor.html#module-src.vendor">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.html#src.testing_pipeline.test">test() (in module src.testing_pipeline)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_Base.MINDDataModule.test_dataloader">test_dataloader() (src.datamodules.mind.datamodule_Base.MINDDataModule method)</a>
+
+      <ul>
+        <li><a href="datamodules.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.test_dataloader">(src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT method)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.test_dataloader">[1]</a>
+</li>
+        <li><a href="datamodules.html#src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.test_dataloader">(src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML method)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.test_dataloader">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="models.html#src.models.collaborativeFiltering.CollaborativeFiltering.test_epoch_end">test_epoch_end() (src.models.collaborativeFiltering.CollaborativeFiltering method)</a>, <a href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.test_epoch_end">[1]</a>
+
+      <ul>
+        <li><a href="models.html#src.models.DKN.DKN.test_epoch_end">(src.models.DKN.DKN method)</a>, <a href="src.models.DKN.html#src.models.DKN.DKN.test_epoch_end">[1]</a>
+</li>
+        <li><a href="models.html#src.models.LSTUR.LSTUR.test_epoch_end">(src.models.LSTUR.LSTUR method)</a>, <a href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.test_epoch_end">[1]</a>
+</li>
+        <li><a href="models.html#src.models.MKR.MKR.test_epoch_end">(src.models.MKR.MKR method)</a>, <a href="src.models.MKR.html#src.models.MKR.MKR.test_epoch_end">[1]</a>
+</li>
+        <li><a href="models.html#src.models.naml.NAML.test_epoch_end">(src.models.naml.NAML method)</a>, <a href="src.models.naml.html#src.models.naml.NAML.test_epoch_end">[1]</a>
+</li>
+        <li><a href="models.html#src.models.nrms.NRMS.test_epoch_end">(src.models.nrms.NRMS method)</a>, <a href="src.models.nrms.html#src.models.nrms.NRMS.test_epoch_end">[1]</a>
+</li>
+        <li><a href="models.html#src.models.rippleNet.RippleNet.test_epoch_end">(src.models.rippleNet.RippleNet method)</a>, <a href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.test_epoch_end">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="models.html#src.models.collaborativeFiltering.CollaborativeFiltering.test_step">test_step() (src.models.collaborativeFiltering.CollaborativeFiltering method)</a>, <a href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.test_step">[1]</a>
+
+      <ul>
+        <li><a href="models.html#src.models.DKN.DKN.test_step">(src.models.DKN.DKN method)</a>, <a href="src.models.DKN.html#src.models.DKN.DKN.test_step">[1]</a>
+</li>
+        <li><a href="models.html#src.models.LSTUR.LSTUR.test_step">(src.models.LSTUR.LSTUR method)</a>, <a href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.test_step">[1]</a>
+</li>
+        <li><a href="models.html#src.models.MKR.MKR.test_step">(src.models.MKR.MKR method)</a>, <a href="src.models.MKR.html#src.models.MKR.MKR.test_step">[1]</a>
+</li>
+        <li><a href="models.html#src.models.naml.NAML.test_step">(src.models.naml.NAML method)</a>, <a href="src.models.naml.html#src.models.naml.NAML.test_step">[1]</a>
+</li>
+        <li><a href="models.html#src.models.nrms.NRMS.test_step">(src.models.nrms.NRMS method)</a>, <a href="src.models.nrms.html#src.models.nrms.NRMS.test_step">[1]</a>
+</li>
+        <li><a href="models.html#src.models.rippleNet.RippleNet.test_step">(src.models.rippleNet.RippleNet method)</a>, <a href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.test_step">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="models.html#src.models.collaborativeFiltering.CollaborativeFiltering.test_step_end">test_step_end() (src.models.collaborativeFiltering.CollaborativeFiltering method)</a>, <a href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.test_step_end">[1]</a>
+
+      <ul>
+        <li><a href="models.html#src.models.MKR.MKR.test_step_end">(src.models.MKR.MKR method)</a>, <a href="src.models.MKR.html#src.models.MKR.MKR.test_step_end">[1]</a>
+</li>
+        <li><a href="models.html#src.models.rippleNet.RippleNet.test_step_end">(src.models.rippleNet.RippleNet method)</a>, <a href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.test_step_end">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="src.models.naml.html#src.models.naml.news_encoder.TextEncoder">TextEncoder (class in src.models.naml.news_encoder)</a>
+</li>
+      <li><a href="src.models.components.html#src.models.components.utils.TimeDistributed">TimeDistributed (class in src.models.components.utils)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.dataset.NewsDataset.to">to() (src.datamodules.mind.dataset.NewsDataset method)</a>
+</li>
+      <li><a href="src.html#src.training_pipeline.train">train() (in module src.training_pipeline)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_Base.MINDDataModule.train_dataloader">train_dataloader() (src.datamodules.mind.datamodule_Base.MINDDataModule method)</a>
+
+      <ul>
+        <li><a href="datamodules.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.train_dataloader">(src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT method)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.train_dataloader">[1]</a>
+</li>
+        <li><a href="datamodules.html#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.train_dataloader">(src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering method)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.train_dataloader">[1]</a>
+</li>
+        <li><a href="datamodules.html#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.train_dataloader">(src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR method)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.train_dataloader">[1]</a>
+</li>
+        <li><a href="datamodules.html#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.train_dataloader">(src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet method)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.train_dataloader">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="src.models.MKR.html#src.models.MKR.MKR.train_kge">train_kge() (src.models.MKR.MKR method)</a>
+</li>
+      <li><a href="src.models.MKR.html#src.models.MKR.MKR.train_rs">train_rs() (src.models.MKR.MKR method)</a>
+</li>
+      <li><a href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.training">training (src.models.collaborativeFiltering.CollaborativeFiltering attribute)</a>
+
+      <ul>
+        <li><a href="src.models.components.attention.html#src.models.components.attention.additive.AdditiveAttention.training">(src.models.components.attention.additive.AdditiveAttention attribute)</a>
+</li>
+        <li><a href="src.models.components.attention.html#src.models.components.attention.multihead_self.MultiHeadSelfAttention.training">(src.models.components.attention.multihead_self.MultiHeadSelfAttention attribute)</a>
+</li>
+        <li><a href="src.models.components.attention.html#src.models.components.attention.multihead_self.ScaledDotProductAttention.training">(src.models.components.attention.multihead_self.ScaledDotProductAttention attribute)</a>
+</li>
+        <li><a href="src.models.components.click_predictor.html#src.models.components.click_predictor.DNN.DNNClickPredictor.training">(src.models.components.click_predictor.DNN.DNNClickPredictor attribute)</a>
+</li>
+        <li><a href="src.models.components.click_predictor.html#src.models.components.click_predictor.dot_product.DotProductClickPredictor.training">(src.models.components.click_predictor.dot_product.DotProductClickPredictor attribute)</a>
+</li>
+        <li><a href="src.models.components.html#src.models.components.simple_dense_net.SimpleDenseNet.training">(src.models.components.simple_dense_net.SimpleDenseNet attribute)</a>
+</li>
+        <li><a href="src.models.components.html#src.models.components.utils.AdditiveAttention.training">(src.models.components.utils.AdditiveAttention attribute)</a>
+</li>
+        <li><a href="src.models.components.html#src.models.components.utils.TimeDistributed.training">(src.models.components.utils.TimeDistributed attribute)</a>
+</li>
+        <li><a href="src.models.DKN.html#src.models.DKN.attention.Attention.training">(src.models.DKN.attention.Attention attribute)</a>
+</li>
+        <li><a href="src.models.DKN.html#src.models.DKN.DKN.training">(src.models.DKN.DKN attribute)</a>
+</li>
+        <li><a href="src.models.DKN.html#src.models.DKN.KCNN.KCNN.training">(src.models.DKN.KCNN.KCNN attribute)</a>
+</li>
+        <li><a href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.training">(src.models.LSTUR.LSTUR attribute)</a>
+</li>
+        <li><a href="src.models.LSTUR.html#src.models.LSTUR.news_encoder.NewsEncoder.training">(src.models.LSTUR.news_encoder.NewsEncoder attribute)</a>
+</li>
+        <li><a href="src.models.LSTUR.html#src.models.LSTUR.user_encoder.UserEncoder.training">(src.models.LSTUR.user_encoder.UserEncoder attribute)</a>
+</li>
+        <li><a href="src.models.MKR.html#src.models.MKR.layers.Bias.training">(src.models.MKR.layers.Bias attribute)</a>
+</li>
+        <li><a href="src.models.MKR.html#src.models.MKR.layers.CrossCompressUnit.training">(src.models.MKR.layers.CrossCompressUnit attribute)</a>
+</li>
+        <li><a href="src.models.MKR.html#src.models.MKR.layers.Dense.training">(src.models.MKR.layers.Dense attribute)</a>
+</li>
+        <li><a href="src.models.MKR.html#src.models.MKR.MKR.training">(src.models.MKR.MKR attribute)</a>
+</li>
+        <li><a href="src.models.naml.html#src.models.naml.NAML.training">(src.models.naml.NAML attribute)</a>
+</li>
+        <li><a href="src.models.naml.html#src.models.naml.news_encoder.ElementEncoder.training">(src.models.naml.news_encoder.ElementEncoder attribute)</a>
+</li>
+        <li><a href="src.models.naml.html#src.models.naml.news_encoder.NewsEncoder.training">(src.models.naml.news_encoder.NewsEncoder attribute)</a>
+</li>
+        <li><a href="src.models.naml.html#src.models.naml.news_encoder.TextEncoder.training">(src.models.naml.news_encoder.TextEncoder attribute)</a>
+</li>
+        <li><a href="src.models.naml.html#src.models.naml.user_encoder.UserEncoder.training">(src.models.naml.user_encoder.UserEncoder attribute)</a>
+</li>
+        <li><a href="src.models.nrms.html#src.models.nrms.news_encoder.NewsEncoder.training">(src.models.nrms.news_encoder.NewsEncoder attribute)</a>
+</li>
+        <li><a href="src.models.nrms.html#src.models.nrms.NRMS.training">(src.models.nrms.NRMS attribute)</a>
+</li>
+        <li><a href="src.models.nrms.html#src.models.nrms.user_encoder.UserEncoder.training">(src.models.nrms.user_encoder.UserEncoder attribute)</a>
+</li>
+        <li><a href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.training">(src.models.rippleNet.RippleNet attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="models.html#src.models.collaborativeFiltering.CollaborativeFiltering.training_step">training_step() (src.models.collaborativeFiltering.CollaborativeFiltering method)</a>, <a href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.training_step">[1]</a>
+
+      <ul>
+        <li><a href="models.html#src.models.DKN.DKN.training_step">(src.models.DKN.DKN method)</a>, <a href="src.models.DKN.html#src.models.DKN.DKN.training_step">[1]</a>
+</li>
+        <li><a href="models.html#src.models.LSTUR.LSTUR.training_step">(src.models.LSTUR.LSTUR method)</a>, <a href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.training_step">[1]</a>
+</li>
+        <li><a href="models.html#src.models.MKR.MKR.training_step">(src.models.MKR.MKR method)</a>, <a href="src.models.MKR.html#src.models.MKR.MKR.training_step">[1]</a>
+</li>
+        <li><a href="models.html#src.models.naml.NAML.training_step">(src.models.naml.NAML method)</a>, <a href="src.models.naml.html#src.models.naml.NAML.training_step">[1]</a>
+</li>
+        <li><a href="models.html#src.models.nrms.NRMS.training_step">(src.models.nrms.NRMS method)</a>, <a href="src.models.nrms.html#src.models.nrms.NRMS.training_step">[1]</a>
+</li>
+        <li><a href="models.html#src.models.rippleNet.RippleNet.training_step">(src.models.rippleNet.RippleNet method)</a>, <a href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.training_step">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.parse.transform_entity_embedding">transform_entity_embedding() (in module src.datamodules.mind.parse)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.datamodules.components.html#src.datamodules.components.utils.unzip_file">unzip_file() (in module src.datamodules.components.utils)</a>
+</li>
+      <li><a href="src.models.components.html#src.models.components.metrics.LogLoss.update">update() (src.models.components.metrics.LogLoss method)</a>
+
+      <ul>
+        <li><a href="src.models.components.html#src.models.components.metrics.MRR.update">(src.models.components.metrics.MRR method)</a>
+</li>
+        <li><a href="src.models.components.html#src.models.components.metrics.Senti.update">(src.models.components.metrics.Senti method)</a>
+</li>
+        <li><a href="src.models.components.html#src.models.components.metrics.SentiMRR.update">(src.models.components.metrics.SentiMRR method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.user_dataloader">user_dataloader() (src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML method)</a>
+</li>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.dataset.UserDataset">UserDataset (class in src.datamodules.mind.dataset)</a>
+</li>
+      <li><a href="src.models.LSTUR.html#src.models.LSTUR.user_encoder.UserEncoder">UserEncoder (class in src.models.LSTUR.user_encoder)</a>
+
+      <ul>
+        <li><a href="src.models.naml.html#src.models.naml.user_encoder.UserEncoder">(class in src.models.naml.user_encoder)</a>
+</li>
+        <li><a href="src.models.nrms.html#src.models.nrms.user_encoder.UserEncoder">(class in src.models.nrms.user_encoder)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_Base.MINDDataModule.val_dataloader">val_dataloader() (src.datamodules.mind.datamodule_Base.MINDDataModule method)</a>
+
+      <ul>
+        <li><a href="datamodules.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.val_dataloader">(src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT method)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.val_dataloader">[1]</a>
+</li>
+        <li><a href="datamodules.html#src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.val_dataloader">(src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML method)</a>, <a href="src.datamodules.mind.html#src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.val_dataloader">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="models.html#src.models.collaborativeFiltering.CollaborativeFiltering.validation_epoch_end">validation_epoch_end() (src.models.collaborativeFiltering.CollaborativeFiltering method)</a>, <a href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.validation_epoch_end">[1]</a>
+
+      <ul>
+        <li><a href="models.html#src.models.DKN.DKN.validation_epoch_end">(src.models.DKN.DKN method)</a>, <a href="src.models.DKN.html#src.models.DKN.DKN.validation_epoch_end">[1]</a>
+</li>
+        <li><a href="models.html#src.models.LSTUR.LSTUR.validation_epoch_end">(src.models.LSTUR.LSTUR method)</a>, <a href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.validation_epoch_end">[1]</a>
+</li>
+        <li><a href="models.html#src.models.MKR.MKR.validation_epoch_end">(src.models.MKR.MKR method)</a>, <a href="src.models.MKR.html#src.models.MKR.MKR.validation_epoch_end">[1]</a>
+</li>
+        <li><a href="models.html#src.models.naml.NAML.validation_epoch_end">(src.models.naml.NAML method)</a>, <a href="src.models.naml.html#src.models.naml.NAML.validation_epoch_end">[1]</a>
+</li>
+        <li><a href="models.html#src.models.nrms.NRMS.validation_epoch_end">(src.models.nrms.NRMS method)</a>, <a href="src.models.nrms.html#src.models.nrms.NRMS.validation_epoch_end">[1]</a>
+</li>
+        <li><a href="models.html#src.models.rippleNet.RippleNet.validation_epoch_end">(src.models.rippleNet.RippleNet method)</a>, <a href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.validation_epoch_end">[1]</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="models.html#src.models.collaborativeFiltering.CollaborativeFiltering.validation_step">validation_step() (src.models.collaborativeFiltering.CollaborativeFiltering method)</a>, <a href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.validation_step">[1]</a>
+
+      <ul>
+        <li><a href="models.html#src.models.DKN.DKN.validation_step">(src.models.DKN.DKN method)</a>, <a href="src.models.DKN.html#src.models.DKN.DKN.validation_step">[1]</a>
+</li>
+        <li><a href="models.html#src.models.LSTUR.LSTUR.validation_step">(src.models.LSTUR.LSTUR method)</a>, <a href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.validation_step">[1]</a>
+</li>
+        <li><a href="models.html#src.models.MKR.MKR.validation_step">(src.models.MKR.MKR method)</a>, <a href="src.models.MKR.html#src.models.MKR.MKR.validation_step">[1]</a>
+</li>
+        <li><a href="models.html#src.models.naml.NAML.validation_step">(src.models.naml.NAML method)</a>, <a href="src.models.naml.html#src.models.naml.NAML.validation_step">[1]</a>
+</li>
+        <li><a href="models.html#src.models.nrms.NRMS.validation_step">(src.models.nrms.NRMS method)</a>, <a href="src.models.nrms.html#src.models.nrms.NRMS.validation_step">[1]</a>
+</li>
+        <li><a href="models.html#src.models.rippleNet.RippleNet.validation_step">(src.models.rippleNet.RippleNet method)</a>, <a href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.validation_step">[1]</a>
+</li>
+      </ul></li>
+      <li><a href="models.html#src.models.collaborativeFiltering.CollaborativeFiltering.validation_step_end">validation_step_end() (src.models.collaborativeFiltering.CollaborativeFiltering method)</a>, <a href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.validation_step_end">[1]</a>
+
+      <ul>
+        <li><a href="models.html#src.models.MKR.MKR.validation_step_end">(src.models.MKR.MKR method)</a>, <a href="src.models.MKR.html#src.models.MKR.MKR.validation_step_end">[1]</a>
+</li>
+        <li><a href="models.html#src.models.rippleNet.RippleNet.validation_step_end">(src.models.rippleNet.RippleNet method)</a>, <a href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.validation_step_end">[1]</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="src.datamodules.mind.html#src.datamodules.mind.download.word_tokenize">word_tokenize() (in module src.datamodules.mind.download)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+          <div class="sidebar-resize-handle"></div>
+
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models included in the library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datamodules.html">Data modules for models included in the library</a></li>
+</ul>
+
+<hr class="docutils" />
+<ul>
+  <li class="toctree-l1"><a class="reference internal" href="#" accesskey="I">General Index</a></li>
+  <li class="toctree-l1"><a class="reference internal" href="py-modindex.html">Python Module Index</a></li>
+</ul>
+<div id="ethical-ad-placement"></div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <nav class="relbar">
+    </nav>
+
+    <footer role="contentinfo">
+      &#169; Copyright 2022, Noel Chia, Ahmed Elzamarany, Nadine Maeser.
+      Created using <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> 5.2.3.
+      <a class="reference external" href="https://insipid-sphinx-theme.readthedocs.io/">Insipid Theme</a>.
+    </footer>
+  </body>
+</html>

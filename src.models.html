@@ -1,0 +1,505 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>src.models package &#8212; News Recommenders Library 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/insipid.css" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script defer src="_static/insipid.js"></script>
+    <script defer src="_static/insipid-sidebar.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head><body>
+    <script type="text/javascript">
+        document.body.classList.add('js');
+    </script>
+    <input type="checkbox" id="sidebar-checkbox" style="display: none;">
+    <label id="overlay" for="sidebar-checkbox"></label>
+    <div class="sidebar-resize-handle"></div>
+    <script type="text/javascript">
+        try {
+            let sidebar = localStorage.getItem('sphinx-sidebar');
+            const sidebar_width = localStorage.getItem('sphinx-sidebar-width');
+            if (sidebar_width) {
+                document.documentElement.style.setProperty('--sidebar-width', sidebar_width);
+            }
+            // show sidebar on wide screen
+            if (!sidebar && window.matchMedia('(min-width: 100rem)').matches) {
+                sidebar = 'visible';
+                // NB: We don't store the value in localStorage!
+            }
+            if (sidebar === 'visible') {
+                document.getElementById('sidebar-checkbox').checked = true;
+            }
+        } catch(e) {
+            console.info(e);
+        }
+    </script>
+    <header id="topbar-placeholder">
+      <div id="topbar">
+        <div id="titlebar">
+          <div class="buttons">
+            <label for="sidebar-checkbox" id="sidebar-button" role="button" tabindex="0" aria-controls="sphinxsidebar" accesskey="M">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+            </label>
+            <button id="search-button" type="button" title="Search" aria-label="Search" aria-expanded="false" aria-controls="search-form" accesskey="S">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+            </button>
+          </div>
+          <div class="title">
+            <a class="parent" href="index.html" accesskey="U">News Recommenders Library 0.0.1 documentation</a>
+            <a class="top" href="#">src.models package</a>
+          </div>
+          <div class="buttons">
+            <button id="fullscreen-button" type="button" aria-hidden="true">
+              <span class="enable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z"/></svg>
+              </span>
+              <span class="disable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M4.686 427.314L104 328l-32.922-31.029C55.958 281.851 66.666 256 88.048 256h112C213.303 256 224 266.745 224 280v112c0 21.382-25.803 32.09-40.922 16.971L152 376l-99.314 99.314c-6.248 6.248-16.379 6.248-22.627 0L4.686 449.941c-6.248-6.248-6.248-16.379 0-22.627zM443.314 84.686L344 184l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C234.697 256 224 245.255 224 232V120c0-21.382 25.803-32.09 40.922-16.971L296 136l99.314-99.314c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.248 6.248 6.248 16.379 0 22.627z"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div id="searchbox" role="search">
+          <form id="search-form" class="search" style="display: none" action="search.html" method="get">
+            <input type="search" name="q" placeholder="Search ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <button>Go</button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav>
+    </nav>
+
+    <nav class="relbar">
+    </nav>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+<section id="src-models-package">
+<h1>src.models package<a class="headerlink" href="#src-models-package" title="Permalink to this heading">§</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">§</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="src.models.BERT.html">src.models.BERT package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src.models.BERT.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="src.models.DKN.html">src.models.DKN package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src.models.DKN.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.DKN.html#module-src.models.DKN.KCNN">src.models.DKN.KCNN module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.KCNN.KCNN"><code class="docutils literal notranslate"><span class="pre">KCNN</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.KCNN.KCNN.forward"><code class="docutils literal notranslate"><span class="pre">KCNN.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.KCNN.KCNN.training"><code class="docutils literal notranslate"><span class="pre">KCNN.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.DKN.html#module-src.models.DKN.attention">src.models.DKN.attention module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.attention.Attention"><code class="docutils literal notranslate"><span class="pre">Attention</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.attention.Attention.forward"><code class="docutils literal notranslate"><span class="pre">Attention.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.attention.Attention.training"><code class="docutils literal notranslate"><span class="pre">Attention.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.DKN.html#module-src.models.DKN">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.DKN"><code class="docutils literal notranslate"><span class="pre">DKN</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.DKN.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">DKN.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.DKN.eval_epoch_end"><code class="docutils literal notranslate"><span class="pre">DKN.eval_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.DKN.eval_step"><code class="docutils literal notranslate"><span class="pre">DKN.eval_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.DKN.forward"><code class="docutils literal notranslate"><span class="pre">DKN.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.DKN.get_news_vector"><code class="docutils literal notranslate"><span class="pre">DKN.get_news_vector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.DKN.get_prediction"><code class="docutils literal notranslate"><span class="pre">DKN.get_prediction()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.DKN.get_user_vector"><code class="docutils literal notranslate"><span class="pre">DKN.get_user_vector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.DKN.on_eval_start"><code class="docutils literal notranslate"><span class="pre">DKN.on_eval_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.DKN.on_test_start"><code class="docutils literal notranslate"><span class="pre">DKN.on_test_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.DKN.on_train_start"><code class="docutils literal notranslate"><span class="pre">DKN.on_train_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.DKN.on_validation_start"><code class="docutils literal notranslate"><span class="pre">DKN.on_validation_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.DKN.test_epoch_end"><code class="docutils literal notranslate"><span class="pre">DKN.test_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.DKN.test_step"><code class="docutils literal notranslate"><span class="pre">DKN.test_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.DKN.training"><code class="docutils literal notranslate"><span class="pre">DKN.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.DKN.training_step"><code class="docutils literal notranslate"><span class="pre">DKN.training_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.DKN.validation_epoch_end"><code class="docutils literal notranslate"><span class="pre">DKN.validation_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.DKN.html#src.models.DKN.DKN.validation_step"><code class="docutils literal notranslate"><span class="pre">DKN.validation_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="src.models.LSTUR.html">src.models.LSTUR package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src.models.LSTUR.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.LSTUR.html#module-src.models.LSTUR.news_encoder">src.models.LSTUR.news_encoder module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.news_encoder.NewsEncoder"><code class="docutils literal notranslate"><span class="pre">NewsEncoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.news_encoder.NewsEncoder.forward"><code class="docutils literal notranslate"><span class="pre">NewsEncoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.news_encoder.NewsEncoder.training"><code class="docutils literal notranslate"><span class="pre">NewsEncoder.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.LSTUR.html#module-src.models.LSTUR.user_encoder">src.models.LSTUR.user_encoder module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.user_encoder.UserEncoder"><code class="docutils literal notranslate"><span class="pre">UserEncoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.user_encoder.UserEncoder.forward"><code class="docutils literal notranslate"><span class="pre">UserEncoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.user_encoder.UserEncoder.training"><code class="docutils literal notranslate"><span class="pre">UserEncoder.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.LSTUR.html#module-src.models.LSTUR">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.LSTUR"><code class="docutils literal notranslate"><span class="pre">LSTUR</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">LSTUR.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.eval_epoch_end"><code class="docutils literal notranslate"><span class="pre">LSTUR.eval_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.eval_step"><code class="docutils literal notranslate"><span class="pre">LSTUR.eval_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.forward"><code class="docutils literal notranslate"><span class="pre">LSTUR.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.get_news_vector"><code class="docutils literal notranslate"><span class="pre">LSTUR.get_news_vector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.get_prediction"><code class="docutils literal notranslate"><span class="pre">LSTUR.get_prediction()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.get_user_vector"><code class="docutils literal notranslate"><span class="pre">LSTUR.get_user_vector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.on_eval_start"><code class="docutils literal notranslate"><span class="pre">LSTUR.on_eval_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.on_test_start"><code class="docutils literal notranslate"><span class="pre">LSTUR.on_test_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.on_train_start"><code class="docutils literal notranslate"><span class="pre">LSTUR.on_train_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.on_validation_start"><code class="docutils literal notranslate"><span class="pre">LSTUR.on_validation_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.test_epoch_end"><code class="docutils literal notranslate"><span class="pre">LSTUR.test_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.test_step"><code class="docutils literal notranslate"><span class="pre">LSTUR.test_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.training"><code class="docutils literal notranslate"><span class="pre">LSTUR.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.training_step"><code class="docutils literal notranslate"><span class="pre">LSTUR.training_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.validation_epoch_end"><code class="docutils literal notranslate"><span class="pre">LSTUR.validation_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.LSTUR.html#src.models.LSTUR.LSTUR.validation_step"><code class="docutils literal notranslate"><span class="pre">LSTUR.validation_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="src.models.MKR.html">src.models.MKR package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src.models.MKR.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.MKR.html#module-src.models.MKR.kGDataset">src.models.MKR.kGDataset module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.kGDataset.KGDataset"><code class="docutils literal notranslate"><span class="pre">KGDataset</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.MKR.html#module-src.models.MKR.layers">src.models.MKR.layers module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.layers.Bias"><code class="docutils literal notranslate"><span class="pre">Bias</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.layers.Bias.forward"><code class="docutils literal notranslate"><span class="pre">Bias.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.layers.Bias.training"><code class="docutils literal notranslate"><span class="pre">Bias.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.layers.CrossCompressUnit"><code class="docutils literal notranslate"><span class="pre">CrossCompressUnit</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.layers.CrossCompressUnit.forward"><code class="docutils literal notranslate"><span class="pre">CrossCompressUnit.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.layers.CrossCompressUnit.training"><code class="docutils literal notranslate"><span class="pre">CrossCompressUnit.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.layers.Dense"><code class="docutils literal notranslate"><span class="pre">Dense</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.layers.Dense.forward"><code class="docutils literal notranslate"><span class="pre">Dense.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.layers.Dense.training"><code class="docutils literal notranslate"><span class="pre">Dense.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.MKR.html#module-src.models.MKR">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.MKR"><code class="docutils literal notranslate"><span class="pre">MKR</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.MKR.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">MKR.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.MKR.eval_epoch_end"><code class="docutils literal notranslate"><span class="pre">MKR.eval_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.MKR.eval_step"><code class="docutils literal notranslate"><span class="pre">MKR.eval_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.MKR.eval_step_end"><code class="docutils literal notranslate"><span class="pre">MKR.eval_step_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.MKR.forward"><code class="docutils literal notranslate"><span class="pre">MKR.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.MKR.l2_loss"><code class="docutils literal notranslate"><span class="pre">MKR.l2_loss()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.MKR.loss_kge"><code class="docutils literal notranslate"><span class="pre">MKR.loss_kge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.MKR.loss_rs"><code class="docutils literal notranslate"><span class="pre">MKR.loss_rs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.MKR.optimizer_step"><code class="docutils literal notranslate"><span class="pre">MKR.optimizer_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.MKR.test_epoch_end"><code class="docutils literal notranslate"><span class="pre">MKR.test_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.MKR.test_step"><code class="docutils literal notranslate"><span class="pre">MKR.test_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.MKR.test_step_end"><code class="docutils literal notranslate"><span class="pre">MKR.test_step_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.MKR.train_kge"><code class="docutils literal notranslate"><span class="pre">MKR.train_kge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.MKR.train_rs"><code class="docutils literal notranslate"><span class="pre">MKR.train_rs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.MKR.training"><code class="docutils literal notranslate"><span class="pre">MKR.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.MKR.training_step"><code class="docutils literal notranslate"><span class="pre">MKR.training_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.MKR.validation_epoch_end"><code class="docutils literal notranslate"><span class="pre">MKR.validation_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.MKR.validation_step"><code class="docutils literal notranslate"><span class="pre">MKR.validation_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.MKR.html#src.models.MKR.MKR.validation_step_end"><code class="docutils literal notranslate"><span class="pre">MKR.validation_step_end()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="src.models.collaborativeFiltering.html">src.models.collaborativeFiltering package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src.models.collaborativeFiltering.html#module-src.models.collaborativeFiltering">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering"><code class="docutils literal notranslate"><span class="pre">CollaborativeFiltering</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">CollaborativeFiltering.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.eval_epoch_end"><code class="docutils literal notranslate"><span class="pre">CollaborativeFiltering.eval_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.eval_step"><code class="docutils literal notranslate"><span class="pre">CollaborativeFiltering.eval_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.eval_step_end"><code class="docutils literal notranslate"><span class="pre">CollaborativeFiltering.eval_step_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.forward"><code class="docutils literal notranslate"><span class="pre">CollaborativeFiltering.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.get_n"><code class="docutils literal notranslate"><span class="pre">CollaborativeFiltering.get_n()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.test_epoch_end"><code class="docutils literal notranslate"><span class="pre">CollaborativeFiltering.test_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.test_step"><code class="docutils literal notranslate"><span class="pre">CollaborativeFiltering.test_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.test_step_end"><code class="docutils literal notranslate"><span class="pre">CollaborativeFiltering.test_step_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.training"><code class="docutils literal notranslate"><span class="pre">CollaborativeFiltering.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.training_step"><code class="docutils literal notranslate"><span class="pre">CollaborativeFiltering.training_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.validation_epoch_end"><code class="docutils literal notranslate"><span class="pre">CollaborativeFiltering.validation_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.validation_step"><code class="docutils literal notranslate"><span class="pre">CollaborativeFiltering.validation_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.collaborativeFiltering.html#src.models.collaborativeFiltering.CollaborativeFiltering.validation_step_end"><code class="docutils literal notranslate"><span class="pre">CollaborativeFiltering.validation_step_end()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="src.models.components.html">src.models.components package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src.models.components.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.components.attention.html">src.models.components.attention package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.attention.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.attention.html#module-src.models.components.attention.additive">src.models.components.attention.additive module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.attention.html#module-src.models.components.attention.multihead_self">src.models.components.attention.multihead_self module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.attention.html#module-src.models.components.attention">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="src.models.components.click_predictor.html">src.models.components.click_predictor package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.click_predictor.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.click_predictor.html#module-src.models.components.click_predictor.DNN">src.models.components.click_predictor.DNN module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.click_predictor.html#module-src.models.components.click_predictor.dot_product">src.models.components.click_predictor.dot_product module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.click_predictor.html#module-src.models.components.click_predictor">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.components.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.components.html#module-src.models.components.metrics">src.models.components.metrics module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.components.html#src.models.components.metrics.LogLoss"><code class="docutils literal notranslate"><span class="pre">LogLoss</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.html#src.models.components.metrics.LogLoss.compute"><code class="docutils literal notranslate"><span class="pre">LogLoss.compute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.html#src.models.components.metrics.LogLoss.full_state_update"><code class="docutils literal notranslate"><span class="pre">LogLoss.full_state_update</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.html#src.models.components.metrics.LogLoss.update"><code class="docutils literal notranslate"><span class="pre">LogLoss.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="src.models.components.html#src.models.components.metrics.MRR"><code class="docutils literal notranslate"><span class="pre">MRR</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.html#src.models.components.metrics.MRR.compute"><code class="docutils literal notranslate"><span class="pre">MRR.compute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.html#src.models.components.metrics.MRR.full_state_update"><code class="docutils literal notranslate"><span class="pre">MRR.full_state_update</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.html#src.models.components.metrics.MRR.update"><code class="docutils literal notranslate"><span class="pre">MRR.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="src.models.components.html#src.models.components.metrics.Senti"><code class="docutils literal notranslate"><span class="pre">Senti</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.html#src.models.components.metrics.Senti.compute"><code class="docutils literal notranslate"><span class="pre">Senti.compute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.html#src.models.components.metrics.Senti.full_state_update"><code class="docutils literal notranslate"><span class="pre">Senti.full_state_update</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.html#src.models.components.metrics.Senti.update"><code class="docutils literal notranslate"><span class="pre">Senti.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="src.models.components.html#src.models.components.metrics.SentiMRR"><code class="docutils literal notranslate"><span class="pre">SentiMRR</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.html#src.models.components.metrics.SentiMRR.compute"><code class="docutils literal notranslate"><span class="pre">SentiMRR.compute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.html#src.models.components.metrics.SentiMRR.full_state_update"><code class="docutils literal notranslate"><span class="pre">SentiMRR.full_state_update</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.html#src.models.components.metrics.SentiMRR.update"><code class="docutils literal notranslate"><span class="pre">SentiMRR.update()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.components.html#module-src.models.components.simple_dense_net">src.models.components.simple_dense_net module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.components.html#src.models.components.simple_dense_net.SimpleDenseNet"><code class="docutils literal notranslate"><span class="pre">SimpleDenseNet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.html#src.models.components.simple_dense_net.SimpleDenseNet.forward"><code class="docutils literal notranslate"><span class="pre">SimpleDenseNet.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.html#src.models.components.simple_dense_net.SimpleDenseNet.training"><code class="docutils literal notranslate"><span class="pre">SimpleDenseNet.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.components.html#module-src.models.components.utils">src.models.components.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.components.html#src.models.components.utils.AdditiveAttention"><code class="docutils literal notranslate"><span class="pre">AdditiveAttention</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.html#src.models.components.utils.AdditiveAttention.forward"><code class="docutils literal notranslate"><span class="pre">AdditiveAttention.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.html#src.models.components.utils.AdditiveAttention.training"><code class="docutils literal notranslate"><span class="pre">AdditiveAttention.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="src.models.components.html#src.models.components.utils.TimeDistributed"><code class="docutils literal notranslate"><span class="pre">TimeDistributed</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.html#src.models.components.utils.TimeDistributed.forward"><code class="docutils literal notranslate"><span class="pre">TimeDistributed.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.html#src.models.components.utils.TimeDistributed.training"><code class="docutils literal notranslate"><span class="pre">TimeDistributed.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.components.html#module-src.models.components">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="src.models.naml.html">src.models.naml package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src.models.naml.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.naml.html#module-src.models.naml.news_encoder">src.models.naml.news_encoder module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.naml.html#src.models.naml.news_encoder.ElementEncoder"><code class="docutils literal notranslate"><span class="pre">ElementEncoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.news_encoder.ElementEncoder.forward"><code class="docutils literal notranslate"><span class="pre">ElementEncoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.news_encoder.ElementEncoder.training"><code class="docutils literal notranslate"><span class="pre">ElementEncoder.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="src.models.naml.html#src.models.naml.news_encoder.NewsEncoder"><code class="docutils literal notranslate"><span class="pre">NewsEncoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.news_encoder.NewsEncoder.forward"><code class="docutils literal notranslate"><span class="pre">NewsEncoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.news_encoder.NewsEncoder.training"><code class="docutils literal notranslate"><span class="pre">NewsEncoder.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="src.models.naml.html#src.models.naml.news_encoder.TextEncoder"><code class="docutils literal notranslate"><span class="pre">TextEncoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.news_encoder.TextEncoder.forward"><code class="docutils literal notranslate"><span class="pre">TextEncoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.news_encoder.TextEncoder.training"><code class="docutils literal notranslate"><span class="pre">TextEncoder.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.naml.html#module-src.models.naml.user_encoder">src.models.naml.user_encoder module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.naml.html#src.models.naml.user_encoder.UserEncoder"><code class="docutils literal notranslate"><span class="pre">UserEncoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.user_encoder.UserEncoder.forward"><code class="docutils literal notranslate"><span class="pre">UserEncoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.user_encoder.UserEncoder.training"><code class="docutils literal notranslate"><span class="pre">UserEncoder.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.naml.html#module-src.models.naml">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.naml.html#src.models.naml.NAML"><code class="docutils literal notranslate"><span class="pre">NAML</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.NAML.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">NAML.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.NAML.eval_epoch_end"><code class="docutils literal notranslate"><span class="pre">NAML.eval_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.NAML.eval_step"><code class="docutils literal notranslate"><span class="pre">NAML.eval_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.NAML.forward"><code class="docutils literal notranslate"><span class="pre">NAML.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.NAML.get_news_vector"><code class="docutils literal notranslate"><span class="pre">NAML.get_news_vector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.NAML.get_prediction"><code class="docutils literal notranslate"><span class="pre">NAML.get_prediction()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.NAML.get_user_vector"><code class="docutils literal notranslate"><span class="pre">NAML.get_user_vector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.NAML.on_eval_start"><code class="docutils literal notranslate"><span class="pre">NAML.on_eval_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.NAML.on_test_start"><code class="docutils literal notranslate"><span class="pre">NAML.on_test_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.NAML.on_train_start"><code class="docutils literal notranslate"><span class="pre">NAML.on_train_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.NAML.on_validation_start"><code class="docutils literal notranslate"><span class="pre">NAML.on_validation_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.NAML.test_epoch_end"><code class="docutils literal notranslate"><span class="pre">NAML.test_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.NAML.test_step"><code class="docutils literal notranslate"><span class="pre">NAML.test_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.NAML.training"><code class="docutils literal notranslate"><span class="pre">NAML.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.NAML.training_step"><code class="docutils literal notranslate"><span class="pre">NAML.training_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.NAML.validation_epoch_end"><code class="docutils literal notranslate"><span class="pre">NAML.validation_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.naml.html#src.models.naml.NAML.validation_step"><code class="docutils literal notranslate"><span class="pre">NAML.validation_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="src.models.nrms.html">src.models.nrms package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src.models.nrms.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.nrms.html#module-src.models.nrms.news_encoder">src.models.nrms.news_encoder module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.news_encoder.NewsEncoder"><code class="docutils literal notranslate"><span class="pre">NewsEncoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.news_encoder.NewsEncoder.forward"><code class="docutils literal notranslate"><span class="pre">NewsEncoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.news_encoder.NewsEncoder.training"><code class="docutils literal notranslate"><span class="pre">NewsEncoder.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.nrms.html#module-src.models.nrms.user_encoder">src.models.nrms.user_encoder module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.user_encoder.UserEncoder"><code class="docutils literal notranslate"><span class="pre">UserEncoder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.user_encoder.UserEncoder.forward"><code class="docutils literal notranslate"><span class="pre">UserEncoder.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.user_encoder.UserEncoder.training"><code class="docutils literal notranslate"><span class="pre">UserEncoder.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.nrms.html#module-src.models.nrms">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.NRMS"><code class="docutils literal notranslate"><span class="pre">NRMS</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.NRMS.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">NRMS.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.NRMS.eval_epoch_end"><code class="docutils literal notranslate"><span class="pre">NRMS.eval_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.NRMS.eval_step"><code class="docutils literal notranslate"><span class="pre">NRMS.eval_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.NRMS.forward"><code class="docutils literal notranslate"><span class="pre">NRMS.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.NRMS.get_news_vector"><code class="docutils literal notranslate"><span class="pre">NRMS.get_news_vector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.NRMS.get_prediction"><code class="docutils literal notranslate"><span class="pre">NRMS.get_prediction()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.NRMS.get_user_vector"><code class="docutils literal notranslate"><span class="pre">NRMS.get_user_vector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.NRMS.on_eval_start"><code class="docutils literal notranslate"><span class="pre">NRMS.on_eval_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.NRMS.on_test_start"><code class="docutils literal notranslate"><span class="pre">NRMS.on_test_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.NRMS.on_train_start"><code class="docutils literal notranslate"><span class="pre">NRMS.on_train_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.NRMS.on_validation_start"><code class="docutils literal notranslate"><span class="pre">NRMS.on_validation_start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.NRMS.test_epoch_end"><code class="docutils literal notranslate"><span class="pre">NRMS.test_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.NRMS.test_step"><code class="docutils literal notranslate"><span class="pre">NRMS.test_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.NRMS.training"><code class="docutils literal notranslate"><span class="pre">NRMS.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.NRMS.training_step"><code class="docutils literal notranslate"><span class="pre">NRMS.training_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.NRMS.validation_epoch_end"><code class="docutils literal notranslate"><span class="pre">NRMS.validation_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.nrms.html#src.models.nrms.NRMS.validation_step"><code class="docutils literal notranslate"><span class="pre">NRMS.validation_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="src.models.rippleNet.html">src.models.rippleNet package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src.models.rippleNet.html#module-src.models.rippleNet">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.rippleNet.html#src.models.rippleNet.RippleNet"><code class="docutils literal notranslate"><span class="pre">RippleNet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">RippleNet.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.create_knowledge_graph"><code class="docutils literal notranslate"><span class="pre">RippleNet.create_knowledge_graph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.create_ripple_set"><code class="docutils literal notranslate"><span class="pre">RippleNet.create_ripple_set()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.eval_epoch_end"><code class="docutils literal notranslate"><span class="pre">RippleNet.eval_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.eval_step"><code class="docutils literal notranslate"><span class="pre">RippleNet.eval_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.eval_step_end"><code class="docutils literal notranslate"><span class="pre">RippleNet.eval_step_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.forward"><code class="docutils literal notranslate"><span class="pre">RippleNet.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.get_feed_dict"><code class="docutils literal notranslate"><span class="pre">RippleNet.get_feed_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.predict"><code class="docutils literal notranslate"><span class="pre">RippleNet.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.prepare_rating_data_train"><code class="docutils literal notranslate"><span class="pre">RippleNet.prepare_rating_data_train()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.test_epoch_end"><code class="docutils literal notranslate"><span class="pre">RippleNet.test_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.test_step"><code class="docutils literal notranslate"><span class="pre">RippleNet.test_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.test_step_end"><code class="docutils literal notranslate"><span class="pre">RippleNet.test_step_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.training"><code class="docutils literal notranslate"><span class="pre">RippleNet.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.training_step"><code class="docutils literal notranslate"><span class="pre">RippleNet.training_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.validation_epoch_end"><code class="docutils literal notranslate"><span class="pre">RippleNet.validation_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.validation_step"><code class="docutils literal notranslate"><span class="pre">RippleNet.validation_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.rippleNet.html#src.models.rippleNet.RippleNet.validation_step_end"><code class="docutils literal notranslate"><span class="pre">RippleNet.validation_step_end()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="module-src.models">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-src.models" title="Permalink to this heading">§</a></h2>
+</section>
+</section>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+          <div class="sidebar-resize-handle"></div>
+
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models included in the library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datamodules.html">Data modules for models included in the library</a></li>
+</ul>
+
+<hr class="docutils" />
+<ul>
+  <li class="toctree-l1"><a class="reference internal" href="genindex.html" accesskey="I">General Index</a></li>
+  <li class="toctree-l1"><a class="reference internal" href="py-modindex.html">Python Module Index</a></li>
+</ul>
+<div id="ethical-ad-placement"></div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <nav class="relbar">
+    </nav>
+
+    <footer role="contentinfo">
+      &#169; Copyright 2022, Noel Chia, Ahmed Elzamarany, Nadine Maeser.
+      Created using <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> 5.2.3.
+      <a class="reference external" href="https://insipid-sphinx-theme.readthedocs.io/">Insipid Theme</a>.
+<a class="reference internal" href="_sources/src.models.rst.txt" rel="nofollow">Show Source</a>.
+    </footer>
+  </body>
+</html>

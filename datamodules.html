@@ -1,0 +1,1175 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Data modules for models included in the library &#8212; News Recommenders Library 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/insipid.css" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script defer src="_static/insipid.js"></script>
+    <script defer src="_static/insipid-sidebar.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Models included in the library" href="models.html" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head><body>
+    <script type="text/javascript">
+        document.body.classList.add('js');
+    </script>
+    <input type="checkbox" id="sidebar-checkbox" style="display: none;">
+    <label id="overlay" for="sidebar-checkbox"></label>
+    <div class="sidebar-resize-handle"></div>
+    <script type="text/javascript">
+        try {
+            let sidebar = localStorage.getItem('sphinx-sidebar');
+            const sidebar_width = localStorage.getItem('sphinx-sidebar-width');
+            if (sidebar_width) {
+                document.documentElement.style.setProperty('--sidebar-width', sidebar_width);
+            }
+            // show sidebar on wide screen
+            if (!sidebar && window.matchMedia('(min-width: 100rem)').matches) {
+                sidebar = 'visible';
+                // NB: We don't store the value in localStorage!
+            }
+            if (sidebar === 'visible') {
+                document.getElementById('sidebar-checkbox').checked = true;
+            }
+        } catch(e) {
+            console.info(e);
+        }
+    </script>
+    <header id="topbar-placeholder">
+      <div id="topbar">
+        <div id="titlebar">
+          <div class="buttons">
+            <label for="sidebar-checkbox" id="sidebar-button" role="button" tabindex="0" aria-controls="sphinxsidebar" accesskey="M">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+            </label>
+            <button id="search-button" type="button" title="Search" aria-label="Search" aria-expanded="false" aria-controls="search-form" accesskey="S">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+            </button>
+          </div>
+          <div class="title">
+            <a class="parent" href="index.html" accesskey="U">News Recommenders Library 0.0.1 documentation</a>
+            <a class="top" href="#">Data modules for models included in the library</a>
+          </div>
+          <div class="buttons">
+            <button id="fullscreen-button" type="button" aria-hidden="true">
+              <span class="enable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z"/></svg>
+              </span>
+              <span class="disable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M4.686 427.314L104 328l-32.922-31.029C55.958 281.851 66.666 256 88.048 256h112C213.303 256 224 266.745 224 280v112c0 21.382-25.803 32.09-40.922 16.971L152 376l-99.314 99.314c-6.248 6.248-16.379 6.248-22.627 0L4.686 449.941c-6.248-6.248-6.248-16.379 0-22.627zM443.314 84.686L344 184l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C234.697 256 224 245.255 224 232V120c0-21.382 25.803-32.09 40.922-16.971L296 136l99.314-99.314c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.248 6.248 6.248 16.379 0 22.627z"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div id="searchbox" role="search">
+          <form id="search-form" class="search" style="display: none" action="search.html" method="get">
+            <input type="search" name="q" placeholder="Search ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <button>Go</button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav>
+      <a href="models.html" class="nav-icon previous" title="previous:&#13;Models included in the library" aria-label="Previous topic" accesskey="P" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>
+      </a>
+    </nav>
+
+    <nav class="relbar">
+      <a class="previous" href="models.html" aria-label="Previous topic" >
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
+        </div>
+        <div class="title">
+          <span class="text">
+            <span class="direction">previous</span>
+            Models included in the library
+          </span>
+        </div>
+      </a>
+    </nav>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+<section id="data-modules-for-models-included-in-the-library">
+<h1>Data modules for models included in the library<a class="headerlink" href="#data-modules-for-models-included-in-the-library" title="Permalink to this heading">§</a></h1>
+<section id="neural-collaborative-filtering">
+<h2>Neural Collaborative Filtering<a class="headerlink" href="#neural-collaborative-filtering" title="Permalink to this heading">§</a></h2>
+<span class="target" id="module-src.datamodules.mind.datamodule_CollaborativeFiltering"></span><dl class="py class">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.datamodules.mind.datamodule_CollaborativeFiltering.</span></span><span class="sig-name descname"><span class="pre">MINDDataModuleCollaborativeFiltering</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_workers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin_memory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mind_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering" title="Permalink to this definition">§</a></dt>
+<dd><p>Datamodule for the Collaborative Filtering model using the MIND dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_dir</strong> (<em>str</em>) – Data directory</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – Batch size for dataloaders</p></li>
+<li><p><strong>num_workers</strong> (<em>int</em>) – Number of workers for dataloaders</p></li>
+<li><p><strong>pin_memory</strong> (<em>bool</em>) – Whether to use pin memory</p></li>
+<li><p><strong>download</strong> (<em>bool</em>) – Whether the mind dataset should be downloaded</p></li>
+<li><p><strong>mind_size</strong> (<em>str</em>) – Dataset size</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.prepare">
+<span class="sig-name descname"><span class="pre">prepare</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.prepare" title="Permalink to this definition">§</a></dt>
+<dd><p>Prepare data for model usage, prior to model instantiation.
+Create ratings files for training, validation, testing.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.prepare_data">
+<span class="sig-name descname"><span class="pre">prepare_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.prepare_data" title="Permalink to this definition">§</a></dt>
+<dd><p>Use this to download and prepare data. Downloading and saving data with multiple processes (distributed
+settings) will result in corrupted data. Lightning ensures this method is called only within a single
+process, so you can safely add your downloading logic within.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>DO NOT set state to the model (use <code class="docutils literal notranslate"><span class="pre">setup</span></code> instead)
+since this is NOT called on every device</p>
+</div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prepare_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># good</span>
+    <span class="n">download_data</span><span class="p">()</span>
+    <span class="n">tokenize</span><span class="p">()</span>
+    <span class="n">etc</span><span class="p">()</span>
+
+    <span class="c1"># bad</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">split</span> <span class="o">=</span> <span class="n">data_split</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">some_state</span> <span class="o">=</span> <span class="n">some_other_state</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In a distributed environment, <code class="docutils literal notranslate"><span class="pre">prepare_data</span></code> can be called in two ways
+(using <span class="xref std std-ref">prepare_data_per_node</span>)</p>
+<ol class="arabic simple">
+<li><p>Once per node. This is the default and is only called on LOCAL_RANK=0.</p></li>
+<li><p>Once in total. Only called on GLOBAL_RANK=0.</p></li>
+</ol>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># DEFAULT</span>
+<span class="c1"># called once per node on LOCAL_RANK=0 of that node</span>
+<span class="k">class</span> <span class="nc">LitDataModule</span><span class="p">(</span><span class="n">LightningDataModule</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prepare_data_per_node</span> <span class="o">=</span> <span class="kc">True</span>
+
+
+<span class="c1"># call on GLOBAL_RANK=0 (great for shared file systems)</span>
+<span class="k">class</span> <span class="nc">LitDataModule</span><span class="p">(</span><span class="n">LightningDataModule</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prepare_data_per_node</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>This is called before requesting the dataloaders:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">prepare_data</span><span class="p">()</span>
+<span class="n">initialize_distributed</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">stage</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">train_dataloader</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">val_dataloader</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">test_dataloader</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">predict_dataloader</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.setup">
+<span class="sig-name descname"><span class="pre">setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.setup" title="Permalink to this definition">§</a></dt>
+<dd><p>Create ratings datasets, knowledge graph dataset for dataloaders.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.train_dataloader">
+<span class="sig-name descname"><span class="pre">train_dataloader</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.train_dataloader" title="Permalink to this definition">§</a></dt>
+<dd><p>Implement one or more PyTorch DataLoaders for training.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A collection of <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.utils.data.DataLoader</span></code> specifying training samples.
+In the case of multiple dataloaders, please see this <span class="xref std std-ref">section</span>.</p>
+</dd>
+</dl>
+<p>The dataloader you return will not be reloaded unless you set
+<a href="#id1"><span class="problematic" id="id2">:paramref:`~pytorch_lightning.trainer.Trainer.reload_dataloaders_every_n_epochs`</span></a> to
+a positive integer.</p>
+<p>For data processing use the following pattern:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>download in <a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.prepare_data" title="src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.prepare_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prepare_data()</span></code></a></p></li>
+<li><p>process and split in <a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.setup" title="src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.setup"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setup()</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<p>However, the above are only necessary for distributed processing.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>do not assign state in prepare_data</p>
+</div>
+<ul class="simple">
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit()</span></code></p></li>
+<li><p><a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.prepare_data" title="src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.prepare_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prepare_data()</span></code></a></p></li>
+<li><p><a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.setup" title="src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering.setup"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setup()</span></code></a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lightning adds the correct sampler for distributed and arbitrary hardware.
+There is no need to set it yourself.</p>
+</div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># single dataloader</span>
+<span class="k">def</span> <span class="nf">train_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+                                    <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,),</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,))])</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">&#39;/path/to/mnist/&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
+                    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span>
+        <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">loader</span>
+
+<span class="c1"># multiple dataloaders, return as list</span>
+<span class="k">def</span> <span class="nf">train_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">mnist</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">cifar</span> <span class="o">=</span> <span class="n">CIFAR</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">mnist_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">mnist</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">cifar_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">cifar</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="c1"># each batch will be a list of tensors: [batch_mnist, batch_cifar]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">mnist_loader</span><span class="p">,</span> <span class="n">cifar_loader</span><span class="p">]</span>
+
+<span class="c1"># multiple dataloader, return as dict</span>
+<span class="k">def</span> <span class="nf">train_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">mnist</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">cifar</span> <span class="o">=</span> <span class="n">CIFAR</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">mnist_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">mnist</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">cifar_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">cifar</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="c1"># each batch will be a dict of tensors: {&#39;mnist&#39;: batch_mnist, &#39;cifar&#39;: batch_cifar}</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;mnist&#39;</span><span class="p">:</span> <span class="n">mnist_loader</span><span class="p">,</span> <span class="s1">&#39;cifar&#39;</span><span class="p">:</span> <span class="n">cifar_loader</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="content-based-bert">
+<h2>Content Based (BERT)<a class="headerlink" href="#content-based-bert" title="Permalink to this heading">§</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.datamodules.mind.datamodule_BERT.</span></span><span class="sig-name descname"><span class="pre">MINDDataModuleBERT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mind_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'demo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin_memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'title'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bert_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokenizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT" title="Permalink to this definition">§</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.prepare_data">
+<span class="sig-name descname"><span class="pre">prepare_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.prepare_data" title="Permalink to this definition">§</a></dt>
+<dd><p>Use this to download and prepare data. Downloading and saving data with multiple processes (distributed
+settings) will result in corrupted data. Lightning ensures this method is called only within a single
+process, so you can safely add your downloading logic within.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>DO NOT set state to the model (use <code class="docutils literal notranslate"><span class="pre">setup</span></code> instead)
+since this is NOT called on every device</p>
+</div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prepare_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># good</span>
+    <span class="n">download_data</span><span class="p">()</span>
+    <span class="n">tokenize</span><span class="p">()</span>
+    <span class="n">etc</span><span class="p">()</span>
+
+    <span class="c1"># bad</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">split</span> <span class="o">=</span> <span class="n">data_split</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">some_state</span> <span class="o">=</span> <span class="n">some_other_state</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In a distributed environment, <code class="docutils literal notranslate"><span class="pre">prepare_data</span></code> can be called in two ways
+(using <span class="xref std std-ref">prepare_data_per_node</span>)</p>
+<ol class="arabic simple">
+<li><p>Once per node. This is the default and is only called on LOCAL_RANK=0.</p></li>
+<li><p>Once in total. Only called on GLOBAL_RANK=0.</p></li>
+</ol>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># DEFAULT</span>
+<span class="c1"># called once per node on LOCAL_RANK=0 of that node</span>
+<span class="k">class</span> <span class="nc">LitDataModule</span><span class="p">(</span><span class="n">LightningDataModule</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prepare_data_per_node</span> <span class="o">=</span> <span class="kc">True</span>
+
+
+<span class="c1"># call on GLOBAL_RANK=0 (great for shared file systems)</span>
+<span class="k">class</span> <span class="nc">LitDataModule</span><span class="p">(</span><span class="n">LightningDataModule</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prepare_data_per_node</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>This is called before requesting the dataloaders:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">prepare_data</span><span class="p">()</span>
+<span class="n">initialize_distributed</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">stage</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">train_dataloader</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">val_dataloader</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">test_dataloader</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">predict_dataloader</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.setup">
+<span class="sig-name descname"><span class="pre">setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.setup" title="Permalink to this definition">§</a></dt>
+<dd><p>Called at the beginning of fit (train + validate), validate, test, or predict. This is a good hook when
+you need to build models dynamically or adjust something about them. This hook is called on every process
+when using DDP.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stage</strong> – either <code class="docutils literal notranslate"><span class="pre">'fit'</span></code>, <code class="docutils literal notranslate"><span class="pre">'validate'</span></code>, <code class="docutils literal notranslate"><span class="pre">'test'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'predict'</span></code></p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LitModel</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">l1</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">prepare_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">download_data</span><span class="p">()</span>
+        <span class="n">tokenize</span><span class="p">()</span>
+
+        <span class="c1"># don&#39;t do this</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">something</span> <span class="o">=</span> <span class="k">else</span>
+
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stage</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">l1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">num_classes</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.test_dataloader">
+<span class="sig-name descname"><span class="pre">test_dataloader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.test_dataloader" title="Permalink to this definition">§</a></dt>
+<dd><p>Implement one or multiple PyTorch DataLoaders for testing.</p>
+<p>For data processing use the following pattern:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>download in <a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.prepare_data" title="src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.prepare_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prepare_data()</span></code></a></p></li>
+<li><p>process and split in <a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.setup" title="src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.setup"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setup()</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<p>However, the above are only necessary for distributed processing.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>do not assign state in prepare_data</p>
+</div>
+<ul class="simple">
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">test()</span></code></p></li>
+<li><p><a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.prepare_data" title="src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.prepare_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prepare_data()</span></code></a></p></li>
+<li><p><a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.setup" title="src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.setup"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setup()</span></code></a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lightning adds the correct sampler for distributed and arbitrary hardware.
+There is no need to set it yourself.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.utils.data.DataLoader</span></code> or a sequence of them specifying testing samples.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+                                    <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,),</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,))])</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">&#39;/path/to/mnist/&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
+                    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span>
+        <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">loader</span>
+
+<span class="c1"># can also return multiple dataloaders</span>
+<span class="k">def</span> <span class="nf">test_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">loader_a</span><span class="p">,</span> <span class="n">loader_b</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">loader_n</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don’t need a test dataset and a <code class="xref py py-meth docutils literal notranslate"><span class="pre">test_step()</span></code>, you don’t need to implement
+this method.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the case where you return multiple test dataloaders, the <code class="xref py py-meth docutils literal notranslate"><span class="pre">test_step()</span></code>
+will have an argument <code class="docutils literal notranslate"><span class="pre">dataloader_idx</span></code> which matches the order here.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.train_dataloader">
+<span class="sig-name descname"><span class="pre">train_dataloader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.train_dataloader" title="Permalink to this definition">§</a></dt>
+<dd><p>Implement one or more PyTorch DataLoaders for training.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A collection of <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.utils.data.DataLoader</span></code> specifying training samples.
+In the case of multiple dataloaders, please see this <span class="xref std std-ref">section</span>.</p>
+</dd>
+</dl>
+<p>The dataloader you return will not be reloaded unless you set
+<a href="#id3"><span class="problematic" id="id4">:paramref:`~pytorch_lightning.trainer.Trainer.reload_dataloaders_every_n_epochs`</span></a> to
+a positive integer.</p>
+<p>For data processing use the following pattern:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>download in <a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.prepare_data" title="src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.prepare_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prepare_data()</span></code></a></p></li>
+<li><p>process and split in <a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.setup" title="src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.setup"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setup()</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<p>However, the above are only necessary for distributed processing.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>do not assign state in prepare_data</p>
+</div>
+<ul class="simple">
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit()</span></code></p></li>
+<li><p><a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.prepare_data" title="src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.prepare_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prepare_data()</span></code></a></p></li>
+<li><p><a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.setup" title="src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.setup"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setup()</span></code></a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lightning adds the correct sampler for distributed and arbitrary hardware.
+There is no need to set it yourself.</p>
+</div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># single dataloader</span>
+<span class="k">def</span> <span class="nf">train_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+                                    <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,),</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,))])</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">&#39;/path/to/mnist/&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
+                    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span>
+        <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">loader</span>
+
+<span class="c1"># multiple dataloaders, return as list</span>
+<span class="k">def</span> <span class="nf">train_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">mnist</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">cifar</span> <span class="o">=</span> <span class="n">CIFAR</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">mnist_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">mnist</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">cifar_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">cifar</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="c1"># each batch will be a list of tensors: [batch_mnist, batch_cifar]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">mnist_loader</span><span class="p">,</span> <span class="n">cifar_loader</span><span class="p">]</span>
+
+<span class="c1"># multiple dataloader, return as dict</span>
+<span class="k">def</span> <span class="nf">train_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">mnist</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">cifar</span> <span class="o">=</span> <span class="n">CIFAR</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">mnist_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">mnist</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">cifar_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">cifar</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="c1"># each batch will be a dict of tensors: {&#39;mnist&#39;: batch_mnist, &#39;cifar&#39;: batch_cifar}</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;mnist&#39;</span><span class="p">:</span> <span class="n">mnist_loader</span><span class="p">,</span> <span class="s1">&#39;cifar&#39;</span><span class="p">:</span> <span class="n">cifar_loader</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.val_dataloader">
+<span class="sig-name descname"><span class="pre">val_dataloader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.val_dataloader" title="Permalink to this definition">§</a></dt>
+<dd><p>Implement one or multiple PyTorch DataLoaders for validation.</p>
+<p>The dataloader you return will not be reloaded unless you set
+<a href="#id5"><span class="problematic" id="id6">:paramref:`~pytorch_lightning.trainer.Trainer.reload_dataloaders_every_n_epochs`</span></a> to
+a positive integer.</p>
+<p>It’s recommended that all data downloads and preparation happen in <a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.prepare_data" title="src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.prepare_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prepare_data()</span></code></a>.</p>
+<ul class="simple">
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">validate()</span></code></p></li>
+<li><p><a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.prepare_data" title="src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.prepare_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prepare_data()</span></code></a></p></li>
+<li><p><a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.setup" title="src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT.setup"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setup()</span></code></a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lightning adds the correct sampler for distributed and arbitrary hardware
+There is no need to set it yourself.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.utils.data.DataLoader</span></code> or a sequence of them specifying validation samples.</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">val_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+                                    <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,),</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,))])</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">&#39;/path/to/mnist/&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span>
+        <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">loader</span>
+
+<span class="c1"># can also return multiple dataloaders</span>
+<span class="k">def</span> <span class="nf">val_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">loader_a</span><span class="p">,</span> <span class="n">loader_b</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">loader_n</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don’t need a validation dataset and a <code class="xref py py-meth docutils literal notranslate"><span class="pre">validation_step()</span></code>, you don’t need to
+implement this method.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the case where you return multiple validation dataloaders, the <code class="xref py py-meth docutils literal notranslate"><span class="pre">validation_step()</span></code>
+will have an argument <code class="docutils literal notranslate"><span class="pre">dataloader_idx</span></code> which matches the order here.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.datamodules.mind.datamodule_MKR">
+<span id="mkr"></span><h2>MKR<a class="headerlink" href="#module-src.datamodules.mind.datamodule_MKR" title="Permalink to this heading">§</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.datamodules.mind.datamodule_MKR.</span></span><span class="sig-name descname"><span class="pre">MINDDataModuleMKR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_categories</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_subcategories</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_title_entities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_abstract_entities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_title_tokens</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_wikidata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_workers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin_memory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mind_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR" title="Permalink to this definition">§</a></dt>
+<dd><p>Datamodule for the MKR model using the MIND dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>use_categories</strong> (<em>bool</em>) – Whether the data preprocessing includes news categories</p></li>
+<li><p><strong>use_subcategories</strong> (<em>bool</em>) – Whether the data preprocessing includes news subcategories</p></li>
+<li><p><strong>use_title_entities</strong> (<em>bool</em>) – Whether the data preprocessing includes news title entities</p></li>
+<li><p><strong>use_abstract_entities</strong> (<em>bool</em>) – Whether the data preprocessing includes news abstract entities</p></li>
+<li><p><strong>use_title_tokens</strong> (<em>bool</em>) – Whether the data preprocessing includes news title tokens</p></li>
+<li><p><strong>use_wikidata</strong> (<em>bool</em>) – Whether the data preprocessing includes additional news entity wikidata knowledge graph</p></li>
+<li><p><strong>data_dir</strong> (<em>str</em>) – Data directory</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – Batch size for dataloaders</p></li>
+<li><p><strong>num_workers</strong> (<em>int</em>) – Number of workers for dataloaders</p></li>
+<li><p><strong>pin_memory</strong> (<em>bool</em>) – Whether to use pin memory</p></li>
+<li><p><strong>download</strong> (<em>bool</em>) – Whether the mind dataset should be downloaded</p></li>
+<li><p><strong>mind_size</strong> (<em>str</em>) – Dataset size</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.prepare">
+<span class="sig-name descname"><span class="pre">prepare</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.prepare" title="Permalink to this definition">§</a></dt>
+<dd><p>Prepare data for model usage, prior to model instantiation.
+Download wikidata knowledge graph, create knowledge graph and ratings files for training, validation, testing.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.prepare_data">
+<span class="sig-name descname"><span class="pre">prepare_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.prepare_data" title="Permalink to this definition">§</a></dt>
+<dd><p>Use this to download and prepare data. Downloading and saving data with multiple processes (distributed
+settings) will result in corrupted data. Lightning ensures this method is called only within a single
+process, so you can safely add your downloading logic within.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>DO NOT set state to the model (use <code class="docutils literal notranslate"><span class="pre">setup</span></code> instead)
+since this is NOT called on every device</p>
+</div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prepare_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># good</span>
+    <span class="n">download_data</span><span class="p">()</span>
+    <span class="n">tokenize</span><span class="p">()</span>
+    <span class="n">etc</span><span class="p">()</span>
+
+    <span class="c1"># bad</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">split</span> <span class="o">=</span> <span class="n">data_split</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">some_state</span> <span class="o">=</span> <span class="n">some_other_state</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In a distributed environment, <code class="docutils literal notranslate"><span class="pre">prepare_data</span></code> can be called in two ways
+(using <span class="xref std std-ref">prepare_data_per_node</span>)</p>
+<ol class="arabic simple">
+<li><p>Once per node. This is the default and is only called on LOCAL_RANK=0.</p></li>
+<li><p>Once in total. Only called on GLOBAL_RANK=0.</p></li>
+</ol>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># DEFAULT</span>
+<span class="c1"># called once per node on LOCAL_RANK=0 of that node</span>
+<span class="k">class</span> <span class="nc">LitDataModule</span><span class="p">(</span><span class="n">LightningDataModule</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prepare_data_per_node</span> <span class="o">=</span> <span class="kc">True</span>
+
+
+<span class="c1"># call on GLOBAL_RANK=0 (great for shared file systems)</span>
+<span class="k">class</span> <span class="nc">LitDataModule</span><span class="p">(</span><span class="n">LightningDataModule</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prepare_data_per_node</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>This is called before requesting the dataloaders:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">prepare_data</span><span class="p">()</span>
+<span class="n">initialize_distributed</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">stage</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">train_dataloader</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">val_dataloader</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">test_dataloader</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">predict_dataloader</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.setup">
+<span class="sig-name descname"><span class="pre">setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stage</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.setup" title="Permalink to this definition">§</a></dt>
+<dd><p>Create ratings datasets and knowledge graph dataset for dataloaders.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.train_dataloader">
+<span class="sig-name descname"><span class="pre">train_dataloader</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.train_dataloader" title="Permalink to this definition">§</a></dt>
+<dd><p>Implement one or more PyTorch DataLoaders for training.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A collection of <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.utils.data.DataLoader</span></code> specifying training samples.
+In the case of multiple dataloaders, please see this <span class="xref std std-ref">section</span>.</p>
+</dd>
+</dl>
+<p>The dataloader you return will not be reloaded unless you set
+<a href="#id7"><span class="problematic" id="id8">:paramref:`~pytorch_lightning.trainer.Trainer.reload_dataloaders_every_n_epochs`</span></a> to
+a positive integer.</p>
+<p>For data processing use the following pattern:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>download in <a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.prepare_data" title="src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.prepare_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prepare_data()</span></code></a></p></li>
+<li><p>process and split in <a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.setup" title="src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.setup"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setup()</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<p>However, the above are only necessary for distributed processing.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>do not assign state in prepare_data</p>
+</div>
+<ul class="simple">
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit()</span></code></p></li>
+<li><p><a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.prepare_data" title="src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.prepare_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prepare_data()</span></code></a></p></li>
+<li><p><a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.setup" title="src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR.setup"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setup()</span></code></a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lightning adds the correct sampler for distributed and arbitrary hardware.
+There is no need to set it yourself.</p>
+</div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># single dataloader</span>
+<span class="k">def</span> <span class="nf">train_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+                                    <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,),</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,))])</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">&#39;/path/to/mnist/&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
+                    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span>
+        <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">loader</span>
+
+<span class="c1"># multiple dataloaders, return as list</span>
+<span class="k">def</span> <span class="nf">train_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">mnist</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">cifar</span> <span class="o">=</span> <span class="n">CIFAR</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">mnist_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">mnist</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">cifar_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">cifar</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="c1"># each batch will be a list of tensors: [batch_mnist, batch_cifar]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">mnist_loader</span><span class="p">,</span> <span class="n">cifar_loader</span><span class="p">]</span>
+
+<span class="c1"># multiple dataloader, return as dict</span>
+<span class="k">def</span> <span class="nf">train_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">mnist</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">cifar</span> <span class="o">=</span> <span class="n">CIFAR</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">mnist_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">mnist</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">cifar_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">cifar</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="c1"># each batch will be a dict of tensors: {&#39;mnist&#39;: batch_mnist, &#39;cifar&#39;: batch_cifar}</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;mnist&#39;</span><span class="p">:</span> <span class="n">mnist_loader</span><span class="p">,</span> <span class="s1">&#39;cifar&#39;</span><span class="p">:</span> <span class="n">cifar_loader</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.datamodules.mind.datamodule_RippleNet">
+<span id="ripplenet"></span><h2>RippleNet<a class="headerlink" href="#module-src.datamodules.mind.datamodule_RippleNet" title="Permalink to this heading">§</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.datamodules.mind.datamodule_RippleNet.</span></span><span class="sig-name descname"><span class="pre">MINDDataModuleRippleNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_categories</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_subcategories</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_title_entities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_abstract_entities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_title_tokens</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_wikidata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_workers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin_memory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mind_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet" title="Permalink to this definition">§</a></dt>
+<dd><p>Datamodule for the RippleNet model using the MIND dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>use_categories</strong> (<em>bool</em>) – Whether the data preprocessing includes news categories</p></li>
+<li><p><strong>use_subcategories</strong> (<em>bool</em>) – Whether the data preprocessing includes news subcategories</p></li>
+<li><p><strong>use_title_entities</strong> (<em>bool</em>) – Whether the data preprocessing includes news title entities</p></li>
+<li><p><strong>use_abstract_entities</strong> (<em>bool</em>) – Whether the data preprocessing includes news abstract entities</p></li>
+<li><p><strong>use_title_tokens</strong> (<em>bool</em>) – Whether the data preprocessing includes news title tokens</p></li>
+<li><p><strong>use_wikidata</strong> (<em>bool</em>) – Whether the data preprocessing includes additional news entity wikidata knowledge graph</p></li>
+<li><p><strong>data_dir</strong> (<em>str</em>) – Data directory</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – Batch size for dataloaders</p></li>
+<li><p><strong>num_workers</strong> (<em>int</em>) – Number of workers for dataloaders</p></li>
+<li><p><strong>pin_memory</strong> (<em>bool</em>) – Whether to use pin memory</p></li>
+<li><p><strong>download</strong> (<em>bool</em>) – Whether the mind dataset should be downloaded</p></li>
+<li><p><strong>mind_size</strong> (<em>str</em>) – Dataset size</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.prepare">
+<span class="sig-name descname"><span class="pre">prepare</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.prepare" title="Permalink to this definition">§</a></dt>
+<dd><p>Prepare data for model usage, prior to model instantiation
+Download wikidata knowledge graph, create knowledge graph and ratings files for training, validation, testing.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.prepare_data">
+<span class="sig-name descname"><span class="pre">prepare_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.prepare_data" title="Permalink to this definition">§</a></dt>
+<dd><p>Use this to download and prepare data. Downloading and saving data with multiple processes (distributed
+settings) will result in corrupted data. Lightning ensures this method is called only within a single
+process, so you can safely add your downloading logic within.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>DO NOT set state to the model (use <code class="docutils literal notranslate"><span class="pre">setup</span></code> instead)
+since this is NOT called on every device</p>
+</div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prepare_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># good</span>
+    <span class="n">download_data</span><span class="p">()</span>
+    <span class="n">tokenize</span><span class="p">()</span>
+    <span class="n">etc</span><span class="p">()</span>
+
+    <span class="c1"># bad</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">split</span> <span class="o">=</span> <span class="n">data_split</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">some_state</span> <span class="o">=</span> <span class="n">some_other_state</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In a distributed environment, <code class="docutils literal notranslate"><span class="pre">prepare_data</span></code> can be called in two ways
+(using <span class="xref std std-ref">prepare_data_per_node</span>)</p>
+<ol class="arabic simple">
+<li><p>Once per node. This is the default and is only called on LOCAL_RANK=0.</p></li>
+<li><p>Once in total. Only called on GLOBAL_RANK=0.</p></li>
+</ol>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># DEFAULT</span>
+<span class="c1"># called once per node on LOCAL_RANK=0 of that node</span>
+<span class="k">class</span> <span class="nc">LitDataModule</span><span class="p">(</span><span class="n">LightningDataModule</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prepare_data_per_node</span> <span class="o">=</span> <span class="kc">True</span>
+
+
+<span class="c1"># call on GLOBAL_RANK=0 (great for shared file systems)</span>
+<span class="k">class</span> <span class="nc">LitDataModule</span><span class="p">(</span><span class="n">LightningDataModule</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prepare_data_per_node</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>This is called before requesting the dataloaders:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">prepare_data</span><span class="p">()</span>
+<span class="n">initialize_distributed</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">stage</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">train_dataloader</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">val_dataloader</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">test_dataloader</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">predict_dataloader</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.setup">
+<span class="sig-name descname"><span class="pre">setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.setup" title="Permalink to this definition">§</a></dt>
+<dd><p>Create ratings datasets for dataloaders.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.train_dataloader">
+<span class="sig-name descname"><span class="pre">train_dataloader</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.train_dataloader" title="Permalink to this definition">§</a></dt>
+<dd><p>Implement one or more PyTorch DataLoaders for training.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A collection of <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.utils.data.DataLoader</span></code> specifying training samples.
+In the case of multiple dataloaders, please see this <span class="xref std std-ref">section</span>.</p>
+</dd>
+</dl>
+<p>The dataloader you return will not be reloaded unless you set
+<a href="#id9"><span class="problematic" id="id10">:paramref:`~pytorch_lightning.trainer.Trainer.reload_dataloaders_every_n_epochs`</span></a> to
+a positive integer.</p>
+<p>For data processing use the following pattern:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>download in <a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.prepare_data" title="src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.prepare_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prepare_data()</span></code></a></p></li>
+<li><p>process and split in <a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.setup" title="src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.setup"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setup()</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<p>However, the above are only necessary for distributed processing.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>do not assign state in prepare_data</p>
+</div>
+<ul class="simple">
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit()</span></code></p></li>
+<li><p><a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.prepare_data" title="src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.prepare_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prepare_data()</span></code></a></p></li>
+<li><p><a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.setup" title="src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet.setup"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setup()</span></code></a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lightning adds the correct sampler for distributed and arbitrary hardware.
+There is no need to set it yourself.</p>
+</div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># single dataloader</span>
+<span class="k">def</span> <span class="nf">train_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+                                    <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,),</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,))])</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">&#39;/path/to/mnist/&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
+                    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span>
+        <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">loader</span>
+
+<span class="c1"># multiple dataloaders, return as list</span>
+<span class="k">def</span> <span class="nf">train_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">mnist</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">cifar</span> <span class="o">=</span> <span class="n">CIFAR</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">mnist_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">mnist</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">cifar_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">cifar</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="c1"># each batch will be a list of tensors: [batch_mnist, batch_cifar]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">mnist_loader</span><span class="p">,</span> <span class="n">cifar_loader</span><span class="p">]</span>
+
+<span class="c1"># multiple dataloader, return as dict</span>
+<span class="k">def</span> <span class="nf">train_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">mnist</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">cifar</span> <span class="o">=</span> <span class="n">CIFAR</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">mnist_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">mnist</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">cifar_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">cifar</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="c1"># each batch will be a dict of tensors: {&#39;mnist&#39;: batch_mnist, &#39;cifar&#39;: batch_cifar}</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;mnist&#39;</span><span class="p">:</span> <span class="n">mnist_loader</span><span class="p">,</span> <span class="s1">&#39;cifar&#39;</span><span class="p">:</span> <span class="n">cifar_loader</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="naml-dkn-lstur-nrms">
+<h2>NAML, DKN, LSTUR, NRMS<a class="headerlink" href="#naml-dkn-lstur-nrms" title="Permalink to this heading">§</a></h2>
+<span class="target" id="module-src.datamodules.mind.datamodule_NAML"></span><dl class="py class">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.datamodules.mind.datamodule_NAML.</span></span><span class="sig-name descname"><span class="pre">MINDDataModuleNAML</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_attributes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mind_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'small'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin_memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_clicked_news_a_user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_words_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_words_abstract</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word_freq_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_freq_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_confidence_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">negative_sampling_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word_embedding_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_embedding_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glove_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML" title="Permalink to this definition">§</a></dt>
+<dd><p>Datamodule for the NAML model using the MIND dataset</p>
+<p>Code based on <a class="reference external" href="https://github.com/Microsoft/Recommenders">https://github.com/Microsoft/Recommenders</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_attributes</strong> (<em>dict</em>) – Attributes are set based on the model</p></li>
+<li><p><strong>mind_size</strong> (<em>string</em>) – Size of the MIND Dataset (demo, small, large)</p></li>
+<li><p><strong>data_dir</strong> (<em>Optional</em><em>[</em><em>string</em><em>]</em>) – Path of the data directory for the dataset</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – Batch size for dataloaders</p></li>
+<li><p><strong>num_workers</strong> (<em>int</em>) – Number of workers for dataloaders</p></li>
+<li><p><strong>pin_memory</strong> (<em>bool</em>) – Requires more memory but might imporve performance</p></li>
+<li><p><strong>num_clicked_news_a_user</strong> (<em>int</em>) – Number of clicked news for each user</p></li>
+<li><p><strong>num_words_title</strong> (<em>int</em>) – Number of words in the title</p></li>
+<li><p><strong>num_words_abstract</strong> (<em>int</em>) – Number of words in the abstract</p></li>
+<li><p><strong>word_freq_threshold</strong> (<em>int</em>) – Frequency threshold of words</p></li>
+<li><p><strong>entity_freq_threshold</strong> (<em>int</em>) – Frequency threshold of entities</p></li>
+<li><p><strong>entity_confidence_threshold</strong> (<em>float</em>) – Confidence threshold of entities</p></li>
+<li><p><strong>negative_sampling_ratio</strong> (<em>int</em>) – Negative sampling ratio</p></li>
+<li><p><strong>word_embedding_dim</strong> (<em>int</em>) – Dimension of word embeddings</p></li>
+<li><p><strong>entity_embedding_dim</strong> (<em>int</em>) – Dimension of entity embeddings</p></li>
+<li><p><strong>download</strong> (<em>bool</em>) – Enable the download and extraction of the MIND dataset. When set to false, extract data must be available in data_dir.</p></li>
+<li><p><strong>glove_size</strong> (<em>int</em>) – Size of Glove embeddings to download</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.setup">
+<span class="sig-name descname"><span class="pre">setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stage</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.setup" title="Permalink to this definition">§</a></dt>
+<dd><p>Called at the beginning of fit (train + validate), validate, test, or predict. This is a good hook when
+you need to build models dynamically or adjust something about them. This hook is called on every process
+when using DDP.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stage</strong> – either <code class="docutils literal notranslate"><span class="pre">'fit'</span></code>, <code class="docutils literal notranslate"><span class="pre">'validate'</span></code>, <code class="docutils literal notranslate"><span class="pre">'test'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'predict'</span></code></p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LitModel</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">l1</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">prepare_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">download_data</span><span class="p">()</span>
+        <span class="n">tokenize</span><span class="p">()</span>
+
+        <span class="c1"># don&#39;t do this</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">something</span> <span class="o">=</span> <span class="k">else</span>
+
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stage</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">l1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">num_classes</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.test_dataloader">
+<span class="sig-name descname"><span class="pre">test_dataloader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.test_dataloader" title="Permalink to this definition">§</a></dt>
+<dd><p>Implement one or multiple PyTorch DataLoaders for testing.</p>
+<p>For data processing use the following pattern:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>download in <code class="xref py py-meth docutils literal notranslate"><span class="pre">prepare_data()</span></code></p></li>
+<li><p>process and split in <a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.setup" title="src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.setup"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setup()</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<p>However, the above are only necessary for distributed processing.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>do not assign state in prepare_data</p>
+</div>
+<ul class="simple">
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">test()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">prepare_data()</span></code></p></li>
+<li><p><a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.setup" title="src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.setup"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setup()</span></code></a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lightning adds the correct sampler for distributed and arbitrary hardware.
+There is no need to set it yourself.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.utils.data.DataLoader</span></code> or a sequence of them specifying testing samples.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+                                    <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,),</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,))])</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">&#39;/path/to/mnist/&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
+                    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span>
+        <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">loader</span>
+
+<span class="c1"># can also return multiple dataloaders</span>
+<span class="k">def</span> <span class="nf">test_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">loader_a</span><span class="p">,</span> <span class="n">loader_b</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">loader_n</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don’t need a test dataset and a <code class="xref py py-meth docutils literal notranslate"><span class="pre">test_step()</span></code>, you don’t need to implement
+this method.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the case where you return multiple test dataloaders, the <code class="xref py py-meth docutils literal notranslate"><span class="pre">test_step()</span></code>
+will have an argument <code class="docutils literal notranslate"><span class="pre">dataloader_idx</span></code> which matches the order here.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.val_dataloader">
+<span class="sig-name descname"><span class="pre">val_dataloader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.val_dataloader" title="Permalink to this definition">§</a></dt>
+<dd><p>Implement one or multiple PyTorch DataLoaders for validation.</p>
+<p>The dataloader you return will not be reloaded unless you set
+<a href="#id11"><span class="problematic" id="id12">:paramref:`~pytorch_lightning.trainer.Trainer.reload_dataloaders_every_n_epochs`</span></a> to
+a positive integer.</p>
+<p>It’s recommended that all data downloads and preparation happen in <code class="xref py py-meth docutils literal notranslate"><span class="pre">prepare_data()</span></code>.</p>
+<ul class="simple">
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">validate()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">prepare_data()</span></code></p></li>
+<li><p><a class="reference internal" href="src.datamodules.mind.html#src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.setup" title="src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML.setup"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setup()</span></code></a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lightning adds the correct sampler for distributed and arbitrary hardware
+There is no need to set it yourself.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.utils.data.DataLoader</span></code> or a sequence of them specifying validation samples.</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">val_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+                                    <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,),</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,))])</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">&#39;/path/to/mnist/&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span>
+        <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">loader</span>
+
+<span class="c1"># can also return multiple dataloaders</span>
+<span class="k">def</span> <span class="nf">val_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">loader_a</span><span class="p">,</span> <span class="n">loader_b</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">loader_n</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don’t need a validation dataset and a <code class="xref py py-meth docutils literal notranslate"><span class="pre">validation_step()</span></code>, you don’t need to
+implement this method.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the case where you return multiple validation dataloaders, the <code class="xref py py-meth docutils literal notranslate"><span class="pre">validation_step()</span></code>
+will have an argument <code class="docutils literal notranslate"><span class="pre">dataloader_idx</span></code> which matches the order here.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+          <div class="sidebar-resize-handle"></div>
+
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models included in the library</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data modules for models included in the library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#neural-collaborative-filtering">Neural Collaborative Filtering</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#src.datamodules.mind.datamodule_CollaborativeFiltering.MINDDataModuleCollaborativeFiltering"><code class="docutils literal notranslate"><span class="pre">MINDDataModuleCollaborativeFiltering</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#content-based-bert">Content Based (BERT)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#src.datamodules.mind.datamodule_BERT.MINDDataModuleBERT"><code class="docutils literal notranslate"><span class="pre">MINDDataModuleBERT</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-src.datamodules.mind.datamodule_MKR">MKR</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#src.datamodules.mind.datamodule_MKR.MINDDataModuleMKR"><code class="docutils literal notranslate"><span class="pre">MINDDataModuleMKR</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-src.datamodules.mind.datamodule_RippleNet">RippleNet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#src.datamodules.mind.datamodule_RippleNet.MINDDataModuleRippleNet"><code class="docutils literal notranslate"><span class="pre">MINDDataModuleRippleNet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#naml-dkn-lstur-nrms">NAML, DKN, LSTUR, NRMS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#src.datamodules.mind.datamodule_NAML.MINDDataModuleNAML"><code class="docutils literal notranslate"><span class="pre">MINDDataModuleNAML</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<hr class="docutils" />
+<ul>
+  <li class="toctree-l1"><a class="reference internal" href="genindex.html" accesskey="I">General Index</a></li>
+  <li class="toctree-l1"><a class="reference internal" href="py-modindex.html">Python Module Index</a></li>
+</ul>
+<div id="ethical-ad-placement"></div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <nav class="relbar">
+      <a class="previous" href="models.html" aria-label="Previous topic" >
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
+        </div>
+        <div class="title">
+          <span class="text">
+            <span class="direction">previous</span>
+            Models included in the library
+          </span>
+        </div>
+      </a>
+    </nav>
+
+    <footer role="contentinfo">
+      &#169; Copyright 2022, Noel Chia, Ahmed Elzamarany, Nadine Maeser.
+      Created using <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> 5.2.3.
+      <a class="reference external" href="https://insipid-sphinx-theme.readthedocs.io/">Insipid Theme</a>.
+<a class="reference internal" href="_sources/datamodules.rst.txt" rel="nofollow">Show Source</a>.
+    </footer>
+  </body>
+</html>

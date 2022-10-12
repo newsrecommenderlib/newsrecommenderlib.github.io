@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>src.models.components package &#8212; News Recommenders Library 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/insipid.css" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script defer src="_static/insipid.js"></script>
+    <script defer src="_static/insipid-sidebar.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head><body>
+    <script type="text/javascript">
+        document.body.classList.add('js');
+    </script>
+    <input type="checkbox" id="sidebar-checkbox" style="display: none;">
+    <label id="overlay" for="sidebar-checkbox"></label>
+    <div class="sidebar-resize-handle"></div>
+    <script type="text/javascript">
+        try {
+            let sidebar = localStorage.getItem('sphinx-sidebar');
+            const sidebar_width = localStorage.getItem('sphinx-sidebar-width');
+            if (sidebar_width) {
+                document.documentElement.style.setProperty('--sidebar-width', sidebar_width);
+            }
+            // show sidebar on wide screen
+            if (!sidebar && window.matchMedia('(min-width: 100rem)').matches) {
+                sidebar = 'visible';
+                // NB: We don't store the value in localStorage!
+            }
+            if (sidebar === 'visible') {
+                document.getElementById('sidebar-checkbox').checked = true;
+            }
+        } catch(e) {
+            console.info(e);
+        }
+    </script>
+    <header id="topbar-placeholder">
+      <div id="topbar">
+        <div id="titlebar">
+          <div class="buttons">
+            <label for="sidebar-checkbox" id="sidebar-button" role="button" tabindex="0" aria-controls="sphinxsidebar" accesskey="M">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+            </label>
+            <button id="search-button" type="button" title="Search" aria-label="Search" aria-expanded="false" aria-controls="search-form" accesskey="S">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+            </button>
+          </div>
+          <div class="title">
+            <a class="parent" href="index.html" accesskey="U">News Recommenders Library 0.0.1 documentation</a>
+            <a class="top" href="#">src.models.components package</a>
+          </div>
+          <div class="buttons">
+            <button id="fullscreen-button" type="button" aria-hidden="true">
+              <span class="enable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z"/></svg>
+              </span>
+              <span class="disable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M4.686 427.314L104 328l-32.922-31.029C55.958 281.851 66.666 256 88.048 256h112C213.303 256 224 266.745 224 280v112c0 21.382-25.803 32.09-40.922 16.971L152 376l-99.314 99.314c-6.248 6.248-16.379 6.248-22.627 0L4.686 449.941c-6.248-6.248-6.248-16.379 0-22.627zM443.314 84.686L344 184l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C234.697 256 224 245.255 224 232V120c0-21.382 25.803-32.09 40.922-16.971L296 136l99.314-99.314c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.248 6.248 6.248 16.379 0 22.627z"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div id="searchbox" role="search">
+          <form id="search-form" class="search" style="display: none" action="search.html" method="get">
+            <input type="search" name="q" placeholder="Search ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <button>Go</button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav>
+    </nav>
+
+    <nav class="relbar">
+    </nav>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+<section id="src-models-components-package">
+<h1>src.models.components package<a class="headerlink" href="#src-models-components-package" title="Permalink to this heading">§</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">§</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="src.models.components.attention.html">src.models.components.attention package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src.models.components.attention.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.components.attention.html#module-src.models.components.attention.additive">src.models.components.attention.additive module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.components.attention.html#src.models.components.attention.additive.AdditiveAttention"><code class="docutils literal notranslate"><span class="pre">AdditiveAttention</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.attention.html#src.models.components.attention.additive.AdditiveAttention.forward"><code class="docutils literal notranslate"><span class="pre">AdditiveAttention.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.attention.html#src.models.components.attention.additive.AdditiveAttention.training"><code class="docutils literal notranslate"><span class="pre">AdditiveAttention.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.components.attention.html#module-src.models.components.attention.multihead_self">src.models.components.attention.multihead_self module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.components.attention.html#src.models.components.attention.multihead_self.MultiHeadSelfAttention"><code class="docutils literal notranslate"><span class="pre">MultiHeadSelfAttention</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.attention.html#src.models.components.attention.multihead_self.MultiHeadSelfAttention.forward"><code class="docutils literal notranslate"><span class="pre">MultiHeadSelfAttention.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.attention.html#src.models.components.attention.multihead_self.MultiHeadSelfAttention.training"><code class="docutils literal notranslate"><span class="pre">MultiHeadSelfAttention.training</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="src.models.components.attention.html#src.models.components.attention.multihead_self.ScaledDotProductAttention"><code class="docutils literal notranslate"><span class="pre">ScaledDotProductAttention</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.attention.html#src.models.components.attention.multihead_self.ScaledDotProductAttention.forward"><code class="docutils literal notranslate"><span class="pre">ScaledDotProductAttention.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.attention.html#src.models.components.attention.multihead_self.ScaledDotProductAttention.training"><code class="docutils literal notranslate"><span class="pre">ScaledDotProductAttention.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.components.attention.html#module-src.models.components.attention">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="src.models.components.click_predictor.html">src.models.components.click_predictor package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src.models.components.click_predictor.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.components.click_predictor.html#module-src.models.components.click_predictor.DNN">src.models.components.click_predictor.DNN module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.components.click_predictor.html#src.models.components.click_predictor.DNN.DNNClickPredictor"><code class="docutils literal notranslate"><span class="pre">DNNClickPredictor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.click_predictor.html#src.models.components.click_predictor.DNN.DNNClickPredictor.forward"><code class="docutils literal notranslate"><span class="pre">DNNClickPredictor.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.click_predictor.html#src.models.components.click_predictor.DNN.DNNClickPredictor.training"><code class="docutils literal notranslate"><span class="pre">DNNClickPredictor.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.components.click_predictor.html#module-src.models.components.click_predictor.dot_product">src.models.components.click_predictor.dot_product module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.models.components.click_predictor.html#src.models.components.click_predictor.dot_product.DotProductClickPredictor"><code class="docutils literal notranslate"><span class="pre">DotProductClickPredictor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.click_predictor.html#src.models.components.click_predictor.dot_product.DotProductClickPredictor.forward"><code class="docutils literal notranslate"><span class="pre">DotProductClickPredictor.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.models.components.click_predictor.html#src.models.components.click_predictor.dot_product.DotProductClickPredictor.training"><code class="docutils literal notranslate"><span class="pre">DotProductClickPredictor.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.models.components.click_predictor.html#module-src.models.components.click_predictor">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">§</a></h2>
+</section>
+<section id="module-src.models.components.metrics">
+<span id="src-models-components-metrics-module"></span><h2>src.models.components.metrics module<a class="headerlink" href="#module-src.models.components.metrics" title="Permalink to this heading">§</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.components.metrics.LogLoss">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.models.components.metrics.</span></span><span class="sig-name descname"><span class="pre">LogLoss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dist_sync_on_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.metrics.LogLoss" title="Permalink to this definition">§</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Metric</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.components.metrics.LogLoss.compute">
+<span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.metrics.LogLoss.compute" title="Permalink to this definition">§</a></dt>
+<dd><p>Override this method to compute the final metric value from state variables synchronized across the
+distributed backend.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.models.components.metrics.LogLoss.full_state_update">
+<span class="sig-name descname"><span class="pre">full_state_update</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#src.models.components.metrics.LogLoss.full_state_update" title="Permalink to this definition">§</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.components.metrics.LogLoss.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">preds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.metrics.LogLoss.update" title="Permalink to this definition">§</a></dt>
+<dd><p>Override this method to update the state variables of your metric class.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.components.metrics.MRR">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.models.components.metrics.</span></span><span class="sig-name descname"><span class="pre">MRR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dist_sync_on_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.metrics.MRR" title="Permalink to this definition">§</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Metric</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.components.metrics.MRR.compute">
+<span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.metrics.MRR.compute" title="Permalink to this definition">§</a></dt>
+<dd><p>Override this method to compute the final metric value from state variables synchronized across the
+distributed backend.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.models.components.metrics.MRR.full_state_update">
+<span class="sig-name descname"><span class="pre">full_state_update</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#src.models.components.metrics.MRR.full_state_update" title="Permalink to this definition">§</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.components.metrics.MRR.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">preds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.metrics.MRR.update" title="Permalink to this definition">§</a></dt>
+<dd><p>Override this method to update the state variables of your metric class.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.components.metrics.Senti">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.models.components.metrics.</span></span><span class="sig-name descname"><span class="pre">Senti</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dist_sync_on_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.metrics.Senti" title="Permalink to this definition">§</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Metric</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.components.metrics.Senti.compute">
+<span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.metrics.Senti.compute" title="Permalink to this definition">§</a></dt>
+<dd><p>Override this method to compute the final metric value from state variables synchronized across the
+distributed backend.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.models.components.metrics.Senti.full_state_update">
+<span class="sig-name descname"><span class="pre">full_state_update</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#src.models.components.metrics.Senti.full_state_update" title="Permalink to this definition">§</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.components.metrics.Senti.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_pred</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s_c</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s_mean</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.metrics.Senti.update" title="Permalink to this definition">§</a></dt>
+<dd><p>Override this method to update the state variables of your metric class.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.components.metrics.SentiMRR">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.models.components.metrics.</span></span><span class="sig-name descname"><span class="pre">SentiMRR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dist_sync_on_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.metrics.SentiMRR" title="Permalink to this definition">§</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Metric</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.components.metrics.SentiMRR.compute">
+<span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.metrics.SentiMRR.compute" title="Permalink to this definition">§</a></dt>
+<dd><p>Override this method to compute the final metric value from state variables synchronized across the
+distributed backend.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.models.components.metrics.SentiMRR.full_state_update">
+<span class="sig-name descname"><span class="pre">full_state_update</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#src.models.components.metrics.SentiMRR.full_state_update" title="Permalink to this definition">§</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.components.metrics.SentiMRR.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_pred</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s_c</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s_mean</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.metrics.SentiMRR.update" title="Permalink to this definition">§</a></dt>
+<dd><p>Override this method to update the state variables of your metric class.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.models.components.simple_dense_net">
+<span id="src-models-components-simple-dense-net-module"></span><h2>src.models.components.simple_dense_net module<a class="headerlink" href="#module-src.models.components.simple_dense_net" title="Permalink to this heading">§</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.components.simple_dense_net.SimpleDenseNet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.models.components.simple_dense_net.</span></span><span class="sig-name descname"><span class="pre">SimpleDenseNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">784</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lin1_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lin2_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lin3_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.simple_dense_net.SimpleDenseNet" title="Permalink to this definition">§</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.components.simple_dense_net.SimpleDenseNet.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.simple_dense_net.SimpleDenseNet.forward" title="Permalink to this definition">§</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.models.components.simple_dense_net.SimpleDenseNet.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#src.models.components.simple_dense_net.SimpleDenseNet.training" title="Permalink to this definition">§</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.models.components.utils">
+<span id="src-models-components-utils-module"></span><h2>src.models.components.utils module<a class="headerlink" href="#module-src.models.components.utils" title="Permalink to this heading">§</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.components.utils.AdditiveAttention">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.models.components.utils.</span></span><span class="sig-name descname"><span class="pre">AdditiveAttention</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embedding_dim</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.utils.AdditiveAttention" title="Permalink to this definition">§</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.components.utils.AdditiveAttention.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_sequence</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.utils.AdditiveAttention.forward" title="Permalink to this definition">§</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.models.components.utils.AdditiveAttention.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#src.models.components.utils.AdditiveAttention.training" title="Permalink to this definition">§</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.components.utils.TimeDistributed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.models.components.utils.</span></span><span class="sig-name descname"><span class="pre">TimeDistributed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_first</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.utils.TimeDistributed" title="Permalink to this definition">§</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.components.utils.TimeDistributed.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.models.components.utils.TimeDistributed.forward" title="Permalink to this definition">§</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.models.components.utils.TimeDistributed.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#src.models.components.utils.TimeDistributed.training" title="Permalink to this definition">§</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.models.components">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-src.models.components" title="Permalink to this heading">§</a></h2>
+</section>
+</section>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+          <div class="sidebar-resize-handle"></div>
+
+<h3><a href="index.html">Table of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models included in the library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datamodules.html">Data modules for models included in the library</a></li>
+</ul>
+
+<hr class="docutils" />
+<ul>
+  <li class="toctree-l1"><a class="reference internal" href="genindex.html" accesskey="I">General Index</a></li>
+  <li class="toctree-l1"><a class="reference internal" href="py-modindex.html">Python Module Index</a></li>
+</ul>
+<div id="ethical-ad-placement"></div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <nav class="relbar">
+    </nav>
+
+    <footer role="contentinfo">
+      &#169; Copyright 2022, Noel Chia, Ahmed Elzamarany, Nadine Maeser.
+      Created using <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> 5.2.3.
+      <a class="reference external" href="https://insipid-sphinx-theme.readthedocs.io/">Insipid Theme</a>.
+<a class="reference internal" href="_sources/src.models.components.rst.txt" rel="nofollow">Show Source</a>.
+    </footer>
+  </body>
+</html>
